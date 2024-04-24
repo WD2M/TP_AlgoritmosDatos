@@ -1,15 +1,25 @@
 #include "Vestimenta.h"
+#include <string>
+using namespace std;
 
 Vestimenta::Vestimenta()
 {
+
 }
 
 Vestimenta::~Vestimenta()
 {
 }
 
-void Vestimenta::setVestimenta(codVestimenta, precio, color, string talla, genero, descripcion, material)
+void Vestimenta::setVestimenta(int _codVestimenta, float _precio, string _color, string _talla, char _genero, string _descripcion, string _material)
 {
+	this->codVestimenta = _codVestimenta;
+	this->precio = _precio;
+	this->color = _color;
+	this->talla = _talla;
+	this->genero = _genero;
+	this->descripcion = _descripcion;
+	this->material = _material;
 }
 
 string Vestimenta::getVestimenta()

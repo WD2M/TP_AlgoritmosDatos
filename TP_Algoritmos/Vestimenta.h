@@ -1,7 +1,7 @@
 #pragma once
 class Vestimenta
 {
-private:
+protected:
 	int codVestimenta;
 	float precio;
 	string color;

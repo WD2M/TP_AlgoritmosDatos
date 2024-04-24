@@ -1,8 +1,8 @@
 // CLASES AGREGADAS
-#include "Usuario.h"
+#include "Usuario.cpp"
 #include "Vestimenta.h"
 
-
+// ENCABEZADO
 #include <iostream>
 #include <string>
 using namespace std;
