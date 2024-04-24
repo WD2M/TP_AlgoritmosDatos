@@ -1,7 +1,11 @@
 #pragma once
+
 class Usuario
 {
 private:
-	int x;
+	int codUsuario;
+	float precio;
+	string a;
+
 };
 

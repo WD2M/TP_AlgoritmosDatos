@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="Comprar.cpp" />
     <ClCompile Include="Envio.cpp" />
+    <ClCompile Include="TP_Algoritmos.cpp" />
     <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="Usuario.cpp" />
     <ClCompile Include="Vestimenta.cpp" />
