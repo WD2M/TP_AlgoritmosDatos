@@ -18,9 +18,21 @@
     <ClInclude Include="Usuario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Vestimenta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pedido.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Usuario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vestimenta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pedido.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
