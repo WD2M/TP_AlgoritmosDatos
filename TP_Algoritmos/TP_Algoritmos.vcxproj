@@ -127,9 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CarritoCompras.h" />
     <ClInclude Include="CatalogoVestimenta.h" />
     <ClInclude Include="Comprar.h" />
     <ClInclude Include="Envio.h" />
+    <ClInclude Include="Favoritos.h" />
+    <ClInclude Include="HIstorialCompras.h" />
     <ClInclude Include="Marca.h" />
     <ClInclude Include="Oferta.h" />
     <ClInclude Include="Pedido.h" />
@@ -138,9 +141,12 @@
     <ClInclude Include="Vestimenta.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CarritoCompras.cpp" />
     <ClCompile Include="CatalogoVestimenta.cpp" />
     <ClCompile Include="Comprar.cpp" />
     <ClCompile Include="Envio.cpp" />
+    <ClCompile Include="Favoritos.cpp" />
+    <ClCompile Include="HIstorialCompras.cpp" />
     <ClCompile Include="Marca.cpp" />
     <ClCompile Include="Oferta.cpp" />
     <ClCompile Include="Temporada.cpp" />

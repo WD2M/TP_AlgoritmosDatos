@@ -30,6 +30,27 @@
     <ClInclude Include="Envio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CatalogoVestimenta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Marca.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Oferta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Temporada.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarritoCompras.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Favoritos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HIstorialCompras.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Usuario.cpp">
@@ -45,6 +66,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Envio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CatalogoVestimenta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Marca.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Oferta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Temporada.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TP_Algoritmos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CarritoCompras.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Favoritos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HIstorialCompras.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
