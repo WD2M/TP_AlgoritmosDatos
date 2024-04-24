@@ -24,6 +24,12 @@
     <ClInclude Include="Pedido.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Comprar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Envio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Usuario.cpp">
@@ -33,6 +39,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Pedido.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Comprar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Envio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -127,11 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Comprar.h" />
+    <ClInclude Include="Envio.h" />
     <ClInclude Include="Pedido.h" />
     <ClInclude Include="Usuario.h" />
     <ClInclude Include="Vestimenta.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Comprar.cpp" />
+    <ClCompile Include="Envio.cpp" />
     <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="Usuario.cpp" />
     <ClCompile Include="Vestimenta.cpp" />

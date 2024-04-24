@@ -1,5 +1,5 @@
 #pragma once
-class Pedido
+class Comprar
 {
 private:
 public:
