@@ -4,9 +4,9 @@
 class HIstorialCompras
 {
 private:
-	Pedido pedido[5];
+	Pedido* arraypedido[5];
 	Usuario usuario;
-	Pedido pedido;
+	Pedido* pedido;
 public:
 	void HistorialCompras();
 };

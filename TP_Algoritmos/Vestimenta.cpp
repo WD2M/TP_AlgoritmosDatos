@@ -11,7 +11,7 @@ Vestimenta::~Vestimenta()
 {
 }
 
-void Vestimenta::setVestimenta(int _codVestimenta, float _precio, string _color, string _talla, char _genero, string _descripcion, string _material)
+void Vestimenta::setVestimenta(int _codVestimenta, float _precio, string _color, string _talla, char _genero, string _descripcion, bool _menor, string _material)
 {
 	this->codVestimenta = _codVestimenta;
 	this->precio = _precio;
@@ -19,6 +19,7 @@ void Vestimenta::setVestimenta(int _codVestimenta, float _precio, string _color,
 	this->talla = _talla;
 	this->genero = _genero;
 	this->descripcion = _descripcion;
+	this->menor = _menor;
 	this->material = _material;
 }
 
