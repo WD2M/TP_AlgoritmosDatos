@@ -1,9 +1,11 @@
+// CLASES AGREGADAS
+#include "Usuario.h"
+#include "Vestimenta.h"
+
+
 #include <iostream>
 #include <string>
 using namespace std;
-
-// CLASES AGREGADAS
-#include "Usuario.h"
 
 int main() {
 	cout << "Hola mundo";

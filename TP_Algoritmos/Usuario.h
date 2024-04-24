@@ -4,8 +4,11 @@ class Usuario
 {
 private:
 	int codUsuario;
-	float precio;
-	string a;
-
+	string nombre;
+	string apellido;
+	string datosPersonales;
+	string correo;
+public:
+	
 };
 
