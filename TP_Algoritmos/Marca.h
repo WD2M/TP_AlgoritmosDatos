@@ -11,7 +11,7 @@ private:
 	int N;
 	bool disponibilidad;
 public:
-	Marca(genero* g)
+	/*Marca(genero* g)
 
 	{
 		N = 1 + rand() % (6);
@@ -69,11 +69,11 @@ public:
 				nombreMarca = "Forever 21";
 			}
 		}
-	}
+	}*/
 	~Marca();
 	string getmarca()
 	{
-		return Marca;
+		return "";//Marca;
 	}
 
 };

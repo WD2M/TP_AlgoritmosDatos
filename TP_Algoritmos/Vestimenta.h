@@ -10,7 +10,7 @@ protected:
 	string color;
 	string talla;
 	char genero;
-	string descripcion;
+	string descripcion; 
 	bool menor;
 	string material;
 public:
