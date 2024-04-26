@@ -5,15 +5,15 @@ using namespace std;
 
 void CarritoCompras::agregar(int a)
 {
-	cout << "Evento Agregar \n";
+	cout << "Evento Agregar Compras \n";
 }
 
 void CarritoCompras::Eliminar()
 {
-	cout << "Evento Eliminar \n";
+	cout << "Evento Eliminar Compras \n";
 }
 
 void CarritoCompras::Comprar()
 {
-	cout << "Evento Comprar \n";
+	cout << "Evento Comprar Compras \n";
 }
