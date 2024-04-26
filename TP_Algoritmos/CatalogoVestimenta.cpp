@@ -8,7 +8,3 @@ CatalogoVestimenta::~CatalogoVestimenta()
 {
 }
 
-Vestimenta CatalogoVestimenta::Filtrar(string filtro)
-{
-	return Vestimenta();
-}
