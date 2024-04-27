@@ -20,8 +20,8 @@ public:
 		this->FechaEnvio= FechaEnvio;
 	}
 	~Envio(){}
-	void Enviar(Ubicacion,codigo,FechaEnvio){}
-		void EstadodelEnvio(EstadoEnvio){}
-		void redirigirEnvio(){}
+	void Enviar(Ubicacion,Codigo,FechaEnvio){}
+	void EstadodelEnvio(EstadoEnvio){}
+	void redirigirEnvio(Ubicacion,Codigo){}
 };
 
