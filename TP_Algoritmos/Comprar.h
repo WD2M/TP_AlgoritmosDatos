@@ -11,16 +11,14 @@ private:
 	float Total;
 	string FechaCompra;
 public:
-	Comprar(string TipoMoneda, string MetodoPago, float Total, string FechaCompra) {
-		this->TipoMoneda = TipoMoneda;
-		this->MetodoPago = MetodoPago;
-		this->Total = Total;
-		this->FechaCompra = FechaCompra;
-	}
-    ~Comprar(){}
-	void RealizarCompra(TipoMoneda,MetodoPago,FechaCompra){}
-	void CalcularPago(Total){}
-	void Aumentarprenda(){}
-	void EliminarPrenda(){}
+	void Comprar(string TipoMoneda, string MetodoPago, float Total, string FechaCompra);
+	void ~Comprar();
+	void RealizarCompra(string TipoMoneda, string MetodoPago, string FechaCompra);
+	void CalcularPago(float Total);
+	string MostrarCompra();
+	void Aumentarprenda();
+	
+	void EliminarPrenda();
+	
 };
 
