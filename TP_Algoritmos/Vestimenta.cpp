@@ -1,6 +1,4 @@
 #include "Vestimenta.h"
-#include <string>
-using namespace std;
 
 Vestimenta::Vestimenta()
 {
