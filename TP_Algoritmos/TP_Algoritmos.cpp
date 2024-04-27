@@ -11,6 +11,8 @@
 #include <cmath>
 using namespace std;
 
+
+
 int main() {
     int dato;
     cout << "Elija el tipo de accion a realizar (1: Usuario, 2: Favoritos, 3: Carrito de Compras): ";

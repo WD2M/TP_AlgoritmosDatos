@@ -3,14 +3,15 @@
 #include <string>
 using namespace std;
 
+
+
 class CatalogoVestimenta
 {
 private:
-	Vestimenta* vestimenta;
+	Vestimenta<int>* lst = new Vestimenta<int>();
 	string filtro;
 public:
 	CatalogoVestimenta();
 	~CatalogoVestimenta();
-	Vestimenta Filtrar(string filtro);
 };
 
