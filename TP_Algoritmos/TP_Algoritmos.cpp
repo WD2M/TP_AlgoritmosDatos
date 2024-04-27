@@ -56,7 +56,7 @@ int main() {
         cout << "Elija el tipo de accion a realizar (1: Agregar, 2: Comprar, 3: Eliminar): ";
         cin >> carro;
         CarritoCompras carritoCompra;
-        switch (carro) {
+        switch (carro) { 
         case 1: {
             cout << "Ingrese Los Datos a agregar: \n";
             carritoCompra.agregar(1);
