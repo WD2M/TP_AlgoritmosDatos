@@ -1,5 +1,5 @@
 // CLASES AGREGADAS
-#include "Usuario.cpp"
+#include "Usuario.h"
 #include "CarritoCompras.h"
 #include "Favoritos.h"
 #include "Vestimenta.h"
