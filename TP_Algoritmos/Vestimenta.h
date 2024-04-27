@@ -48,7 +48,7 @@ struct Vestimenta<typename T, NADA>::Nodo {
 	string color;
 	string talla;
 	char genero;
-	string descripcion;
+	string descripcion; 
 	bool menor;
 	string material;
 
