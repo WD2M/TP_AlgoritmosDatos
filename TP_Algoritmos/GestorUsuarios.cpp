@@ -43,9 +43,9 @@ void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
     }
 }
 
-void GestorUsuarios::CrearUsuariosVendedor(int cantidad)
+void GestorUsuarios::CrearUsuariosVendedor(int cantidad, int inicial)
 {
-    Usuario usua = CrearUsuarios(1);
+    Usuario usua = CrearUsuarios(inicial);
 
     float ventas;
     cout << "Ingrese los Datos de ventas:";
@@ -57,14 +57,15 @@ void GestorUsuarios::CrearUsuariosVendedor(int cantidad)
     usuarioVendedor(usua, ventas, empresa);
 
     cantidad--;
+    inicial++;
     if (cantidad > 0) {
-        CrearUsuariosVendedor(cantidad);
+        CrearUsuariosVendedor(cantidad, inicial);
     }
 }
 
-void GestorUsuarios::CrearUsuariosCliente(int cantidad)
+void GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
 {
-    Usuario usua = CrearUsuarios(1);
+    Usuario usua = CrearUsuarios(inicial);
 
     float saldo;
     cout << "Ingrese los Datos de ventas:";
@@ -76,27 +77,34 @@ void GestorUsuarios::CrearUsuariosCliente(int cantidad)
     usuarioCliente(usua, saldo, tarjeta);
 
     cantidad--;
+    inicial++;
     if (cantidad > 0) {
-        CrearUsuariosCliente(cantidad);
+        CrearUsuariosCliente(cantidad, inicial);
     }
 }
 
 void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, string contacto)
 {
-    cout << "Usuario registrado con datos: " + to_string(usua.codUsuario) + " " + usua.nombre + " "
+    cout << "--------------------------------------------------" << endl;
+    cout << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + ubicacion + " " + contacto + "\n";
+    cout << "--------------------------------------------------" << endl;
 }
 
 void GestorUsuarios::usuarioVendedor(Usuario usua, float ventas, string empresa)
 {
-    cout << "Usuario registrado con datos: " + to_string(usua.codUsuario) + " " + usua.nombre + " "
+    cout << "--------------------------------------------------" << endl;
+    cout << "Usuario Vendedor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + to_string(ventas) + " " + empresa + "\n";
+    cout << "--------------------------------------------------" << endl;
 }
 
 void GestorUsuarios::usuarioCliente(Usuario usua, float saldo, string tarjeta)
 {
-    cout << "Usuario registrado con datos: " + to_string(usua.codUsuario) + " " + usua.nombre + " "
+    cout << "--------------------------------------------------" << endl;
+    cout << "Usuario Cliente registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + to_string(saldo) + " " + tarjeta + "\n";
+    cout << "--------------------------------------------------" << endl;
 }
 
 string GestorUsuarios::RegistroContenido(string nombre)

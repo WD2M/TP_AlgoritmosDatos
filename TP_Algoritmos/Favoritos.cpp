@@ -2,17 +2,22 @@
 #include <iostream>
 
 void Favoritos::AgregarFavorito(int codigo)
-{
-	cout << "Evento Agregar Favorito \n";
+{	
+	cout << "Producto Agregado a Favorito con dodigo " + to_string(codigo);
 }
 
 void Favoritos::RemoverFavorito(int codigo)
 {
-	cout << "Evento Remover Favorito \n";
+	cout << "Producto removido de Favorito con dodigo " + to_string(codigo);
 }
 
-Vestimenta Favoritos::VerFavoritos()
+void Favoritos::VerFavoritos()
 {
-	cout << "Evento Ver Favoritos \n";
-	return Vestimenta();
+	cout << "---------------------" << endl;
+	cout << "los Favoritos son\n";
+	for (int i = 0; i < tamaño; i++)
+	{
+		cout << productos[i]<<endl;
+	}
+	cout << "---------------------" << endl;
 }

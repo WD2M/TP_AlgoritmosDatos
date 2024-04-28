@@ -47,7 +47,6 @@ void  Compras::MostrarCompra()
 	cin >>MetodoPago;
 	cout << "El tipo de moneda es:";
 	cin >>TipoMoneda;
-	cout << typeid(Total).name();
 	cout << UnionEventos(Total, TipoMoneda, MetodoPago);
 }
 

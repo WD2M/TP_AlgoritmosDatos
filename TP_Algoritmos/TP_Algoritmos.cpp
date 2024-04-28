@@ -52,7 +52,7 @@ int main() {
             cout << "¿Cuantos Usuarios desea Registrar?): ";
             cin >> dato;
             int datoUsuario;
-            cout << "¿Que usuario desea Registrar? (1: Distribuidor, 2: Vendedor, 3: Cliente): ";
+            cout << "¿Que usuario desea Registrar?\n(1: Distribuidor, 2: Vendedor, 3: Cliente): ";
             cin >> datoUsuario;
             switch (datoUsuario) {
             case 1: {
@@ -60,11 +60,11 @@ int main() {
                 break;
             }
             case 2: {
-                usuario.CrearUsuariosVendedor(dato);
+                usuario.CrearUsuariosVendedor(dato,1);
                 break;
             }
             case 3: {
-                usuario.CrearUsuariosCliente(dato);
+                usuario.CrearUsuariosCliente(dato,1);
                 break;
             }
             default:
@@ -78,20 +78,28 @@ int main() {
         break;
     }
     case 2: {
-        cout << "***Favoritos***\n";
+        cout << "---------------------------" << endl;
+        cout << "   ***Favoritos***\n";
+        cout << "---------------------------" << endl;
         int favorito;
-        cout << "Elija el tipo de accion a realizar (1: Agregar Favorito, 2: Remover Favorito, 3: Ver Favoritos): ";
+        cout << "--------------------------------------------------------------" << endl;
+        cout << "           Elija el tipo de accion a realizar\n1: Agregar Favorito, 2: Remover Favorito, 3: Ver Favoritos:" << endl;
+        cout << "--------------------------------------------------------------" << endl;
         cin >> favorito;
         Favoritos favoritos;
         switch (favorito) {
         case 1: {
-            cout << "Ingrese Los Datos a agregar: \n";
-            favoritos.AgregarFavorito(1);
+            int cod;
+            cout << "Ingrese el codigo del producto a agregar: \n";
+            cin >> cod;
+            favoritos.AgregarFavorito(cod);
             break;
         }
         case 2: {
-            cout << "Ingrese Los Datos a Remover: \n";
-            favoritos.RemoverFavorito(1);
+            int cod;
+            cout << "Ingrese el codigo a Remover: \n";
+            cin >> cod;
+            favoritos.RemoverFavorito(cod);
             break;
         }
         case 3: {
@@ -105,9 +113,13 @@ int main() {
         break;
     }
     case 3: {
+        cout << "---------------------------" << endl;
         cout << "***Carrito de Compras***\n";
+        cout << "---------------------------" << endl;
         int carro;
-        cout << "Elija el tipo de accion a realizar (1: Agregar, 2: Comprar, 3: Eliminar): ";
+        cout << "------------------------------------------" << endl;
+        cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: " << endl;
+        cout << "------------------------------------------" << endl;
         cin >> carro;
         CarritoCompras carritoCompra;
         switch (carro) {
