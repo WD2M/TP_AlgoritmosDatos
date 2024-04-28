@@ -1,7 +1,6 @@
 #pragma once
 #include<iostream>
 #include <string>
-#include "Vestimenta.h"
 #include "CarritoCompras.h"
 using namespace std;
 class Compras
