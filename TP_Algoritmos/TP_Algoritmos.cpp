@@ -13,6 +13,7 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include "GestorUsuarios.h"
 
 using namespace std;
 Temporada<int>* lst = new Temporada<int>();
@@ -30,7 +31,7 @@ int main() {
         int dato;
         cout << "Elija el tipo de accion a realizar (1: Enviar Correo, 2: Registrar Usuarios): ";
         cin >> dato;
-        Usuario usuario;
+        GestorUsuarios usuario;
         switch (dato) {
         case 1: {
             cout << "***Envio de Correos***\n";
@@ -42,7 +43,25 @@ int main() {
             int dato;
             cout << "¿Cuantos Usuarios desea Registrar?): ";
             cin >> dato;
-            usuario.CrearUsuarios(dato);
+            int datoUsuario;
+            cout << "¿Que usuario desea Registrar? (1: Distribuidor, 2: Vendedor, 3: Cliente): ";
+            cin >> datoUsuario;
+            switch (datoUsuario) {
+            case 1: {
+                usuario.CrearUsuariosDistribuidor(dato);
+                break;
+            }
+            case 2: {
+                usuario.CrearUsuariosVendedor(dato);
+                break;
+            }
+            case 3: {
+                usuario.CrearUsuariosCliente(dato);
+                break;
+            }
+            default:
+                cerr << "Tipo de datos no válido\n";
+            }
             break;
         }
         default:
@@ -107,6 +126,5 @@ int main() {
     default:
         cerr << "Tipo de datos no válido\n";
     }
-
     system("pause>0");
 }

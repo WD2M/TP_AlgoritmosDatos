@@ -51,11 +51,20 @@
     <ClInclude Include="Vestimenta.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GestorUsuarios.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cliente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vendedor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Distribuidor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Usuario.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Pedido.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -90,6 +99,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Vestimenta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GestorUsuarios.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cliente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vendedor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Distribuidor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
