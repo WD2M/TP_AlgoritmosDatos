@@ -1,5 +1,6 @@
 #include "Comprar.h"
 
+
 Comprar::Comprar(string TipoMoneda, string MetodoPago, float Total)
 {
 	this->TipoMoneda = TipoMoneda;
@@ -9,7 +10,7 @@ Comprar::Comprar(string TipoMoneda, string MetodoPago, float Total)
 
 }
 
-void Comprar::RealizarCompra(string TipoMoneda, string MetodoPago)
+string Comprar::RealizarCompra(string TipoMoneda, string MetodoPago)
 {
 	cout << "-----------------------" << endl;
 	cout << ":REALIZACION DE COMPRA:" << endl;
@@ -19,39 +20,48 @@ void Comprar::RealizarCompra(string TipoMoneda, string MetodoPago)
 	cout << endl << "2.-INGRESE EL METODO DE PAGO:";
 	cin >> MetodoPago;
 
+	return " La realizacion de la compra se hizo con la moneda "+TipoMoneda + " con el metodo de pago "+ MetodoPago;
 }
 
-void Comprar::CalcularPago(float Total)
+
+
+string Comprar::CalcularPago(float Total)
 {
-	if (Total = < 0) {
+	if (Total <=  0) {
 		return 0;
 	}
-	else
+	if else(Total<2)
 	{
-		return CalcularPago;
+		 Total+=0.5;
+		 CalcularPago(Total);
+		 return "El valor de la compra es de: " + Total;
 	}
 }
 
-string Comprar::MostrarCompra()
+void  Comprar::MostrarCompra()
 {
-
-	lambdas auto UnionEventos = [&](float total, string TipoMoneda, string MetodoPago) {
+	auto UnionEventos = [&](float total, string TipoMoneda, string MetodoPago) {
 	return CalcularPago(Total) + RealizarCompra(TipoMoneda,MetodoPago);
 };
-	return string();
 	float Total;
 	cout << "El total del pago es:";
-	cin >> this->Total;
+	cin >>Total;
 	string TipoMoneda,MetodoPago;
-	cout << "El tipo de moneda que se uso es:" << cin << this->TipoMoneda << endl; 
-	"El metdodo de pago fue el siguiente:" << cin << this->MetodoPago << endl;
-	cout << UnionEventos(Total, TipoMoneda,MetodoPago);
+	cout << "El tipo de pago es:";
+	cin >>MetodoPago;
+	cout << "El tipo de moneda es:";
+	cin >>TipoMoneda;
+	cout << UnionEventos(Total, TipoMoneda, MetodoPago);
+
+
 }
 
 void Comprar::Aumentarprenda()
 {
+	
 }
 
 void Comprar::EliminarPrenda()
 {
+
 }

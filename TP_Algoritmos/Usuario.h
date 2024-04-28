@@ -11,9 +11,10 @@ private:
 	string datosPersonales;
 	string correo;
 public:
-	void usuario(int codUsuario, string nombre,	string apellido, string datosPersonales, string correo);
-
-
-	
+	void CrearUsuarios(int cantidad);
+	void usuario(string codUsuario, string nombre,	string apellido, string datosPersonales, string correo);
+	string RegistroContenido(string nombre);
+	void EnviarCorreo();
+	string Correo(string nombre);	
 };
 
