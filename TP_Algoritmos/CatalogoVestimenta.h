@@ -47,16 +47,15 @@ public:
 template <typename T, T NADA>
 struct CatalogoVestimenta<T, NADA>::Nodo {
 
-	int codVestimenta;
-	float precio;
+	T codVestimenta;
+    T precio;
 	string nombre;
 	string color;
 	string talla;
 	char genero;
 	string descripcion;
 	bool menor;
-	string material;
-
+	
 	Nodo* sig;
 
 	Nodo(T codVestimenta = NADA, T precio = NADA, string nombre = NADA, string color = NADA, string talla = NADA, char genero = NADA, string descripcion = NADA, bool menor = NADA, string material = NADA, Nodo* sig = nullptr) : codVestimenta(codVestimenta), precio(precio), nombre(nombre), color(color), talla(talla), genero(genero), descripcion(descripcion), menor(menor), material(material), sig(sig) {}
