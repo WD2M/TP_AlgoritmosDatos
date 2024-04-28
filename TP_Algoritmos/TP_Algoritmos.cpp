@@ -22,24 +22,32 @@ Temporada<int>* lst = new Temporada<int>();
 int main() {
     int dato;
     lst->setTemporada("ads", "ca", "das");
-    cout << lst->getEstacionAnio(0);
-    cout << "Elija el tipo de accion a realizar (1: Usuario, 2: Favoritos, 3: Carrito de Compras): ";
+    //cout << lst->getEstacionAnio(0);
+    cout << "--------------------------------------------------" << endl;
+    cout << "       Elija el tipo de accion a realizar\n1: Usuario, 2: Favoritos, 3: Carrito de Compras:" << endl;
+    cout << "--------------------------------------------------" << endl;
     cin >> dato;
 
     switch (dato) {
     case 1: {
         int dato;
-        cout << "Elija el tipo de accion a realizar (1: Enviar Correo, 2: Registrar Usuarios): ";
+        cout << "------------------------------------------" << endl;
+        cout << "   Elija el tipo de accion a realizar\n1: Enviar Correo, 2: Registrar Usuarios:" << endl;
+        cout << "------------------------------------------" << endl;
         cin >> dato;
         GestorUsuarios usuario;
         switch (dato) {
         case 1: {
-            cout << "***Envio de Correos***\n";
+            cout << "---------------------------" << endl;
+            cout << "   ***Envio de Correos***\n";
+            cout << "---------------------------" << endl;
             usuario.EnviarCorreo();
             break;
         }
         case 2: {
-            cout << "***Crear Usuarios***\n";
+            cout << "---------------------------" << endl;
+            cout << "   ***Crear Usuarios***\n";
+            cout << "---------------------------" << endl;
             int dato;
             cout << "¿Cuantos Usuarios desea Registrar?): ";
             cin >> dato;
@@ -48,7 +56,7 @@ int main() {
             cin >> datoUsuario;
             switch (datoUsuario) {
             case 1: {
-                usuario.CrearUsuariosDistribuidor(dato);
+                usuario.CrearUsuariosDistribuidor(dato, 1);
                 break;
             }
             case 2: {

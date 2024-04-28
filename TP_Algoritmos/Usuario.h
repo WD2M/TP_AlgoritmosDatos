@@ -10,5 +10,8 @@ public:
 	string apellido;
 	string datosPersonales;
 	string correo;
+	void GetUsuario();
+	string Login(string usuario, string contraseña);
+	void CerrarSesion();
 };
 

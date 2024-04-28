@@ -1,10 +1,10 @@
 #include "GestorUsuarios.h"
 #include <iostream>
 
-Usuario GestorUsuarios::CrearUsuarios()
+Usuario GestorUsuarios::CrearUsuarios(int posUsuario)
 {
     Usuario usuario;
-    cout << "Ingrese los datos para el Usuario:\nh";  
+    cout << "Ingrese los datos para el Usuario " + to_string(posUsuario) + " :" << endl;
 
     cout << "Ingrese un codigo de Usuario:";
     cin >> usuario.codUsuario;
@@ -23,9 +23,9 @@ Usuario GestorUsuarios::CrearUsuarios()
     return usuario;
 }
 
-void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad)
+void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
 {
-    Usuario usua = CrearUsuarios();
+    Usuario usua = CrearUsuarios(inicial);
 
     string ubicacion;
     cout << "Ingrese los Datos de Ubicacion:";
@@ -37,14 +37,15 @@ void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad)
     usuarioDistribuidor(usua, ubicacion, contacto);
 
     cantidad--;
+    inicial++;
     if (cantidad > 0) {
-        CrearUsuariosDistribuidor(cantidad);
+        CrearUsuariosDistribuidor(cantidad, inicial);
     }
 }
 
 void GestorUsuarios::CrearUsuariosVendedor(int cantidad)
 {
-    Usuario usua = CrearUsuarios();
+    Usuario usua = CrearUsuarios(1);
 
     float ventas;
     cout << "Ingrese los Datos de ventas:";
@@ -63,7 +64,7 @@ void GestorUsuarios::CrearUsuariosVendedor(int cantidad)
 
 void GestorUsuarios::CrearUsuariosCliente(int cantidad)
 {
-    Usuario usua = CrearUsuarios();
+    Usuario usua = CrearUsuarios(1);
 
     float saldo;
     cout << "Ingrese los Datos de ventas:";

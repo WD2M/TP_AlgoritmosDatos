@@ -10,8 +10,8 @@ private:
 	Vendedor vendedor;
 	Distribuidor distribuidor;
 public:
-	Usuario CrearUsuarios();
-	void CrearUsuariosDistribuidor(int cantidad);
+	Usuario CrearUsuarios(int posUsuario);
+	void CrearUsuariosDistribuidor(int cantidad, int inicial);
 	void CrearUsuariosVendedor(int cantidad);
 	void CrearUsuariosCliente(int cantidad);
 	void usuarioDistribuidor(Usuario usua, string ubicacion, string contacto);
