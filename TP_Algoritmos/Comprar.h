@@ -4,7 +4,7 @@
 #include "Vestimenta.h"
 #include "CarritoCompras.h"
 using namespace std;
-class Comprar
+class Compras
 {
 private:
 	string TipoMoneda;
@@ -13,7 +13,6 @@ private:
 
 public:
 	void Comprar(string TipoMoneda, string MetodoPago, float Total);
-	void ~Comprar();
 	string RealizarCompra(string TipoMoneda, string MetodoPago);
 	string CalcularPago(float Total);
 

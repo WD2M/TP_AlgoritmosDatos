@@ -42,8 +42,6 @@ string Usuario::RegistroContenido(string nombre)
     return " con contenido: " + nombre;
 }
 
-
-
 void Usuario::EnviarCorreo()
 {
     auto EnvioCorreo = [&](string correo, string contenido) {

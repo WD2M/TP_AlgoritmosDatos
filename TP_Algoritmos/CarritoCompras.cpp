@@ -1,4 +1,5 @@
 #include "CarritoCompras.h"
+#include "Comprar.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -15,5 +16,6 @@ void CarritoCompras::Eliminar()
 
 void CarritoCompras::Comprar()
 {
-	cout << "Evento Comprar Compras \n";
+	Compras compras;
+	compras.MostrarCompra();
 }
