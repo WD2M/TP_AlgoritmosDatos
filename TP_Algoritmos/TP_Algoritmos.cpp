@@ -118,7 +118,7 @@ int main() {
         cout << "---------------------------" << endl;
         int carro;
         cout << "------------------------------------------" << endl;
-        cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: " << endl;
+        cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: 4: Historial" << endl;
         cout << "------------------------------------------" << endl;
         cin >> carro;
         CarritoCompras carritoCompra;
@@ -136,6 +136,11 @@ int main() {
         case 3: {
             cout << "Ingrese Los Datos a Eliminar: \n";
             carritoCompra.Eliminar();
+            break;
+        }
+        case 4: {
+            cout << "Los Datos del Historial son: \n";
+            carritoCompra.Historial();
             break;
         }
         default:

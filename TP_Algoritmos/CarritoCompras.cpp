@@ -1,4 +1,5 @@
 #include "CarritoCompras.h"
+#include "HistorialCompras.h"
 #include "Comprar.h"
 #include <iostream>
 #include <string>
@@ -18,4 +19,10 @@ void CarritoCompras::Comprar()
 {
 	Compras compras;
 	compras.MostrarCompra();
+}
+
+void CarritoCompras::Historial()
+{
+	HIstorialCompras historial;
+	historial.HistorialCompras();
 }

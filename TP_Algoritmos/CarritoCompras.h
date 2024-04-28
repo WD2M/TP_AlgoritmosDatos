@@ -9,5 +9,6 @@ public:
 	void agregar(int a);
 	void Eliminar();
 	void Comprar();
+	void Historial();
 };
 
