@@ -11,8 +11,10 @@ void Compras::Comprar(string TipoMoneda, string MetodoPago, float Total)
 string Compras::RealizarCompra(string TipoMoneda, string MetodoPago)
 {
 	cout << "-----------------------" << endl;
-	cout << ":REALIZACION DE COMPRA:" << endl;
+	cout << "*REALIZACION DE COMPRA*" << endl;
 	cout << "-----------------------" << endl;
+
+
 	return " La realizacion de la compra se hizo con la moneda "+TipoMoneda + " con el metodo de pago "+ MetodoPago;
 }
 
