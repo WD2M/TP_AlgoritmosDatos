@@ -11,11 +11,13 @@
 #include <cmath>
 
 using namespace std;
-
+CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
 
 
 int main() {
     int dato;
+    lst->setVestimenta(123, 323, "ads", "ca", "das", 'c', "sda", "adsad", "dsad");
+    cout << lst->getcodVestimenta(0);
     cout << "Elija el tipo de accion a realizar (1: Usuario, 2: Favoritos, 3: Carrito de Compras): ";
     cin >> dato;
 
