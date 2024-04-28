@@ -1,16 +1,32 @@
 #pragma once
-#include "Vestimenta.h"
 #include <string>
-#include <iostream>
+#include <functional>
 using namespace std;
+typedef unsigned int uint;
 
-class Marca : Vestimenta
+template <typename T, T NADA = 0>
+class Marca
 {
-private:
-	string nombreMarca;
-	int N;
-	bool disponibilidad;
+	struct Nodo;
+	typedef function<int(T, T)> Comp;
+	Nodo* ini;
+	uint lon;
+	Comp comparar;
+
 public:
+	uint longitud();
+	bool esVacia();
+	void setMarca(string nombreMarca, T N, bool disponibilidad);
+
+	// *-----------* C O N S T R U C T O R E S *-----------*
+	Marca() : ini(nullptr), lon(0), comparar([](T a, T b) {return a - b;}) {}
+	Marca(Comp comparar) : ini(nullptr), lon(0), comparar(comparar) {}
+	// *---------------------------------------------------*
+
+	// *-----------* D E S T R U C T O R *-----------*
+	~Marca();
+	// *---------------------------------------------*
+
 	/*Marca(genero* g)
 
 	{
@@ -70,10 +86,19 @@ public:
 			}
 		}
 	}*/
-	~Marca();
-	string getmarca()
-	{
-		return "";//Marca;
-	}
 
+	string getNombreMarca(uint pos);
+	T getN(uint pos);
+	bool getDisponibilidad(uint pos);
+};
+
+template <typename T, T NADA>
+struct Marca<T, NADA>::Nodo {
+
+	string nombreMarca;
+	T N;
+	bool disponibilidad;
+
+	Nodo* sig;
+	Nodo(string nombreMarca = NADA, T N = NADA, bool disponibilidad = NADA, Nodo* sig = nullptr) : nombreMarca(nombreMarca), N(N), disponibilidad(disponibilidad), sig(sig) {}
 };

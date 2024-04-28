@@ -13,9 +13,9 @@ bool CatalogoVestimenta<T, NADA>::esVacia()
 }
 
 template<typename T, T NADA>
-void CatalogoVestimenta<T, NADA>::setVestimenta(T codVestimenta, T precio, string nombre, string color, string talla, char genero, string descripcion, bool menor, string material)
+void CatalogoVestimenta<T, NADA>::setVestimenta(T codVestimenta, T precio, string nombre, string color, string talla, char genero, string descripcion, bool menor)
 {
-	Nodo* nuevo = new Nodo(codVestimenta, precio, nombre, color, talla, genero, descripcion, menor, material, ini);
+	Nodo* nuevo = new Nodo(codVestimenta, precio, nombre, color, talla, genero, descripcion, menor, ini);
 	if (nuevo != nullptr) {
 		ini = nuevo;
 		lon++;
