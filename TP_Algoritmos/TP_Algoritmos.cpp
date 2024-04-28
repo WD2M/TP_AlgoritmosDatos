@@ -4,6 +4,9 @@
 #include "CarritoCompras.h"
 #include "Favoritos.h"
 #include "CatalogoVestimenta.cpp"
+#include "Temporada.cpp"
+#include "Oferta.cpp"
+#include "Marca.cpp"
 
 // ENCABEZADO
 #include <iostream>
@@ -12,13 +15,13 @@
 #include <cmath>
 
 using namespace std;
-CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
+Temporada<int>* lst = new Temporada<int>();
 
 
 int main() {
     int dato;
-    lst->setVestimenta(123, 323, "ads", "ca", "das", 'c', "sda", "adsad", "dsad");
-    //cout << lst->getcodVestimenta(0);
+    lst->setTemporada("ads", "ca", "das");
+    cout << lst->getEstacionAnio(0);
     cout << "Elija el tipo de accion a realizar (1: Usuario, 2: Favoritos, 3: Carrito de Compras): ";
     cin >> dato;
 

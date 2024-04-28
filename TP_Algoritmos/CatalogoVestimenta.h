@@ -22,7 +22,7 @@ public:
 	uint longitud();
 	bool esVacia();
 
-	void setVestimenta(T codVestimenta, T precio, string nombre, string color, string talla, char genero, string descripcion, bool menor, string material);
+	void setVestimenta(T codVestimenta, T precio, string nombre, string color, string talla, char genero, string descripcion, bool menor);
 
 	// *-----------* C O N S T R U C T O R E S *-----------*
 	CatalogoVestimenta() : ini(nullptr), lon(0), comparar([](T a, T b) {return a - b;}) {}
@@ -58,6 +58,6 @@ struct CatalogoVestimenta<T, NADA>::Nodo {
 	
 	Nodo* sig;
 
-	Nodo(T codVestimenta = NADA, T precio = NADA, string nombre = NADA, string color = NADA, string talla = NADA, char genero = NADA, string descripcion = NADA, bool menor = NADA, string material = NADA, Nodo* sig = nullptr) : codVestimenta(codVestimenta), precio(precio), nombre(nombre), color(color), talla(talla), genero(genero), descripcion(descripcion), menor(menor), sig(sig) {}
+	Nodo(T codVestimenta = NADA, T precio = NADA, string nombre = NADA, string color = NADA, string talla = NADA, char genero = NADA, string descripcion = NADA, bool menor = NADA, Nodo* sig = nullptr) : codVestimenta(codVestimenta), precio(precio), nombre(nombre), color(color), talla(talla), genero(genero), descripcion(descripcion), menor(menor), sig(sig) {}
 };
 
