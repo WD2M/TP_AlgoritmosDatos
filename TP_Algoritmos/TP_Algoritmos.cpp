@@ -1,27 +1,37 @@
 // CLASES AGREGADAS
 
-#include "Usuario.h"
+
 #include "CarritoCompras.h"
 #include "Favoritos.h"
 #include "CatalogoVestimenta.cpp"
+
+#include "HIstorialCompras.h"
 #include "Temporada.cpp"
 #include "Oferta.cpp"
 #include "Marca.cpp"
+#include "GestorUsuarios.h"
 
 // ENCABEZADO
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <cmath>
-#include "GestorUsuarios.h"
+
 
 using namespace std;
-Temporada<int>* lst = new Temporada<int>();
 
+CarritoCompras carritoCompra;
+Vestimenta* vestimenta = new Vestimenta;
+CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
 
 int main() {
+
+
+    cout << "Ingrese Los Datos a agregar: \n";
+    lst->setVestimenta(12, 32, "aa", "a", "b", 's', "ad", false);
+    lst->getcodVestimenta(0);
+    /*
     int dato;
-    lst->setTemporada("ads", "ca", "das");
     //cout << lst->getEstacionAnio(0);
     cout << "--------------------------------------------------" << endl;
     cout << "       Elija el tipo de accion a realizar\n1: Usuario, 2: Favoritos, 3: Carrito de Compras:" << endl;
@@ -122,10 +132,17 @@ int main() {
         cout << "------------------------------------------" << endl;
         cin >> carro;
         CarritoCompras carritoCompra;
+        Vestimenta* vestimenta = new Vestimenta;
+        CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
+
+        int a;
         switch (carro) {
         case 1: {
+
             cout << "Ingrese Los Datos a agregar: \n";
-            carritoCompra.agregar(1);
+            vestimenta->setNombre();
+            lst->setVestimenta(12, 32, vestimenta->getNombre(), "a", "b", 's', "ad", false);
+            lst->getNombre(0);
             break;
         }
         case 2: {
@@ -151,5 +168,6 @@ int main() {
     default:
         cerr << "Tipo de datos no válido\n";
     }
+    */
     system("pause>0");
 }

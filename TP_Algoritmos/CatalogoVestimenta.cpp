@@ -1,4 +1,8 @@
 #include "CatalogoVestimenta.h"
+#include "iostream"
+using namespace std;
+
+typedef unsigned int uint;
 
 template<typename T, T NADA>
 uint CatalogoVestimenta<T, NADA>::longitud()

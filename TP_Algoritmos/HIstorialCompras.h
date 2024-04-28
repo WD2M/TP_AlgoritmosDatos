@@ -1,13 +1,28 @@
 #pragma once
 #include "Pedido.h"
 #include "Usuario.h"
-class HIstorialCompras
+#include "Comprar.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+
+struct Nodo : Compras {
+	int dato;
+	Nodo* siguiente;
+};
+
+class HIstorialCompras : Compras
 {
-private:
-	Pedido* arraypedido[5];
-	Usuario usuario;
-	Pedido* pedido;
 public:
+	Compras compra;
+	Nodo* frente;
+	Nodo* fin;
+	int n;
+
 	void HistorialCompras();
+	bool colaVacia(Nodo* frente);
+	void insertarCola(Nodo*& frente, Nodo*& fin, int& n);
+	void eliminarCola(Nodo*& frente, Nodo*& fin, int n);
 };
 

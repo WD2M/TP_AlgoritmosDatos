@@ -10,6 +10,11 @@ void CarritoCompras::agregar(int a)
 	cout << "Evento Agregar Compras \n";
 }
 
+int CarritoCompras::getCodigo(int a)
+{
+	return a;
+}
+
 void CarritoCompras::Eliminar()
 {
 	cout << "Evento Eliminar Compras \n";
