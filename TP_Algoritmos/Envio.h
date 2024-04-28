@@ -10,6 +10,7 @@ private:
 	char EstadoEnvio;
 	int Codigo;
 	string FechaEnvio;
+	
 
 public:
 	void Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaEnvio);
