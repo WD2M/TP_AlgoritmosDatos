@@ -18,12 +18,8 @@ void Pedido::RealizarNuevoPedido()
 	string NuevoPedido;
 	cout << "EN CASO DESEE REALIZAR NUEVO PEDIDO ESCRIBA SI:";
 	cin >> NuevoPedido;
-	if (NuevoPedido = 'SI')
+	if (NuevoPedido == "SI")
 	{
-		RealizarCompra;
-	}
-	else
-	{
-		return 0;
+		RealizarCompra(TipoMoneda, MetodoPago);
 	}
 }
