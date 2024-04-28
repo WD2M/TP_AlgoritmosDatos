@@ -1,10 +1,14 @@
 #pragma once
 #include<iostream>
+#include "Comprar.h"
+
 using namespace std;
-class Pedido
+class Pedido : Compras
 {
-private:
-	bool EstadoFavorito;
+
 public:
+	void DetallesEnvio();
+	void CancelarPedido();
+	void RealizarNuevoPedido();
 };
 

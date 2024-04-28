@@ -12,16 +12,9 @@ private:
 	string FechaEnvio;
 
 public:
-	Envio(string Ubicacion, char EstadoEnvio, int Codigo, string FechaEnvio)
-	{
-		this->Ubicacion = Ubicacion;
-		this->EstadoEnvio= EstadoEnvio;
-		this->Codigo=Codigo;
-		this->FechaEnvio= FechaEnvio;
-	}
-	~Envio(){}
-	//void Enviar(Ubicacion,Codigo,FechaEnvio){}
-	//void EstadodelEnvio(EstadoEnvio){}
-	//void redirigirEnvio(Ubicacion,Codigo){}
+	void Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaEnvio);
+	void IndicarEnviar(string Ubicacion, int Codigo, string FechaEnvio);
+	void EstadodelEnvio(char EstadoEnvio);
+	void redirigirEnvio(string Ubicacion, int Codigo);
 };
 
