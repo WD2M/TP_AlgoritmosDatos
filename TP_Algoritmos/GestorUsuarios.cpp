@@ -106,54 +106,6 @@ void GestorUsuarios::usuarioCliente(Usuario usua, float saldo, string tarjeta)
     cout << "Usuario Cliente registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + to_string(saldo) + " " + tarjeta + "\n";
     cout << "--------------------------------------------------" << endl;
-    int n;
-    cout << "PARA INGRESAR AL CARRITO DE COMPRAS PRESIONA 3" << endl;
-    cin >> n;
-    switch (n)
-    {
-    case 3: {
-        cout << "---------------------------" << endl;
-        cout << "***Carrito de Compras***\n";
-        cout << "---------------------------" << endl;
-        int carro;
-        cout << "------------------------------------------" << endl;
-        cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: 4: Historial" << endl;
-        cout << "------------------------------------------" << endl;
-        cin >> carro;
-        CarritoCompras carritoCompra;
-
-
-        int a;
-        switch (carro) {
-        case 1: {
-
-            cout << "Ingrese Los Datos a agregar: \n";
-            break;
-        }
-        case 2: {
-            cout << "Ingrese Los Datos a comprar: \n";
-            carritoCompra.Comprar();
-
-            break;
-        }
-        case 3: {
-            cout << "Ingrese Los Datos a Eliminar: \n";
-            carritoCompra.Eliminar();
-            break;
-        }
-        case 4: {
-            cout << "Los Datos del Historial son: \n";
-            carritoCompra.Historial();
-            break;
-        }
-        default:
-            cerr << "Tipo de datos no válido\n";
-        }
-        break;
-    }
-    default:
-        break;
-    }
 }
 
 string GestorUsuarios::RegistroContenido(string nombre)

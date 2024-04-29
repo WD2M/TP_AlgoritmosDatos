@@ -146,9 +146,9 @@ int main() {
     int dato;
     
     cout << "----------------------------------------------------------------------" << endl;
-    cout << "                         BIENVENIDO A SHEIN!,  << endl;
+    cout << "                         BIENVENIDO A SHEIN!                          "  << endl;
     cout << "----------------------------------------------------------------------" << endl;
-    cout << "¿DESEA REGISTRAR USUARIO? PRESIONE 1:" << endl;
+    cout << "DESEA REGISTRAR USUARIO? PRESIONE 1:" << endl;
     cout << "-------------------------------------" << endl;
     cin >> dato;
     
@@ -187,6 +187,65 @@ int main() {
             }
             case 2: {
                 usuario.CrearUsuariosCliente(dato,1);
+                int n;
+                cout << "PARA INGRESAR AL CARRITO DE COMPRAS PRESIONA 3" << endl;
+                cin >> n;
+                switch (n)
+                {
+                case 3: {
+                    cout << "---------------------------" << endl;
+                    cout << "***Carrito de Compras***\n";
+                    cout << "---------------------------" << endl;
+                    int carro;
+                    cout << "------------------------------------------" << endl;
+                    cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: 4: Historial" << endl;
+                    cout << "------------------------------------------" << endl;
+                    cin >> carro;
+                    CarritoCompras carritoCompra;
+
+
+                    int a;
+                    switch (carro) {
+                    case 1: {
+                        int opcion;
+                        cout << "DESEA COMPRAR ROPA DE HOMBRE(1) O ROPA DE MUJER(2), ELIJA LA OPCION:";
+                            cin >> opcion;
+                            if (opcion == 1)
+                            {
+                                catalogoHombres();
+                            }
+                            else if (opcion == 2)
+                            {
+                                catalogoMujeres();
+                            }
+                        cout << "Ingrese Los Datos a agregar: \n";
+                        break;
+                    }
+                    case 2: {
+                        cout << "Ingrese Los Datos a comprar: \n";
+                        carritoCompra.Comprar();
+
+                        break;
+                    }
+                    case 3: {
+                        cout << "Ingrese Los Datos a Eliminar: \n";
+                        carritoCompra.Eliminar();
+                        break;
+                    }
+                    case 4: {
+                        cout << "Los Datos del Historial son: \n";
+                        carritoCompra.Historial();
+                        break;
+                    }
+                    default:
+                        cerr << "Tipo de datos no válido\n";
+                    }
+                    break;
+                }
+                default:
+                    break;
+                }
+
                 break;
             }
             default:
