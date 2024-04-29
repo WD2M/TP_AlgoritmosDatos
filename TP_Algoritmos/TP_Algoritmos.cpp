@@ -20,9 +20,9 @@
 
 using namespace std;
 
-CarritoCompras carritoCompra;
 Vestimenta* vestimenta = new Vestimenta;
 CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
+
 
 void MostrarVestimenta(CatalogoVestimenta<int>* lst, int i) {
     cout << lst->getcodVestimenta(i) << endl;
@@ -141,23 +141,25 @@ void productos(CatalogoVestimenta<int>* lst) {
     lst->setVestimenta(24, 119, "Short", "azul", "XS, S, M", 'F');
 }
 
+
+
 int main() {
     // SE CREAN LOS PRODUCTOS
     productos(lst);
 
     int dato;
     
-    cout << "--------------------------------------------------" << endl;
-    cout << "       Bienvenido a SHEIN registre un usuario 1: Usuario" << endl;
-    cout << "--------------------------------------------------" << endl;
+    cout << "----------------------------------------------------------------------" << endl;
+    cout << "       BIENVENIDO A SHEIN!, presione 1 para registrar un usuario" << endl;
+    cout << "----------------------------------------------------------------------" << endl;
     cin >> dato;
-
+    
     switch (dato) {
     case 1: {
         int dato;
-        cout << "------------------------------------------" << endl;
-        cout << "   Elija el tipo de accion a realizar\n 2: Registrar Usuarios:" << endl;
-        cout << "------------------------------------------" << endl;
+        cout << "---------------------------------------------" << endl;
+        cout << "   Presione 2 para registrar el nuevo usuario" << endl;
+        cout << "---------------------------------------------" << endl;
         cin >> dato;
         GestorUsuarios usuario;
         switch (dato) {
@@ -173,10 +175,12 @@ int main() {
             cout << "   ***Crear Usuarios***\n";
             cout << "---------------------------" << endl;
             int dato;
-            cout << "¿Cuantos Usuarios desea Registrar?): ";
+            cout << " Cuantos Usuarios desea Registrar?: ";
             cin >> dato;
             int datoUsuario;
-            cout << "¿Que usuario desea Registrar?\n(1: Distribuidor, 2: Vendedor, 3: Cliente): ";
+            cout << "-----------------------------------------------------" << endl;
+            cout << " Que usuario desea Registrar?\n(1: Distribuidor, 2: Cliente): " << endl;
+            cout << "-----------------------------------------------------" << endl;
             cin >> datoUsuario;
             switch (datoUsuario) {
             case 1: {
@@ -184,10 +188,6 @@ int main() {
                 break;
             }
             case 2: {
-                usuario.CrearUsuariosVendedor(dato,1);
-                break;
-            }
-            case 3: {
                 usuario.CrearUsuariosCliente(dato,1);
                 break;
             }
@@ -236,46 +236,7 @@ int main() {
         }
         break;
     }
-    case 3: {
-        cout << "---------------------------" << endl;
-        cout << "***Carrito de Compras***\n";
-        cout << "---------------------------" << endl;
-        int carro;
-        cout << "------------------------------------------" << endl;
-        cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: 4: Historial" << endl;
-        cout << "------------------------------------------" << endl;
-        cin >> carro;
-        CarritoCompras carritoCompra;
-        Vestimenta* vestimenta = new Vestimenta;
-        CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
-
-        int a;
-        switch (carro) {
-        case 1: {
-
-            cout << "Ingrese Los Datos a agregar: \n";
-            break;
-        }
-        case 2: {
-            cout << "Ingrese Los Datos a comprar: \n";
-            carritoCompra.Comprar();
-            break;
-        }
-        case 3: {
-            cout << "Ingrese Los Datos a Eliminar: \n";
-            carritoCompra.Eliminar();
-            break;
-        }
-        case 4: {
-            cout << "Los Datos del Historial son: \n";
-            carritoCompra.Historial();
-            break;
-        }
-        default:
-            cerr << "Tipo de datos no válido\n";
-        }
-        break;
-    }
+    
     default:
         cerr << "Tipo de datos no válido\n";
     }
