@@ -62,32 +62,12 @@ void Compras::Aumentarprenda()
 {
 	int NuevaPrenda;
 	CarritoCompras::agregar();
+	HIstorialCompras++;
 }
 
 void Compras::EliminarPrenda()
 {
-	int Prenda;
-	cout << "QUE PRENDA DESEA ELIMINAR: ( 1:ad 2:da 3:Dad) ";
-	cin >> Prenda;
-	switch (Prenda)
-	{
-	case 1:
-	{
-		cout << "´Prenda ad Eliminada...";
-		break;
-	}
-	case 2:
-	{
-		cout << "´Prenda ad Eliminada...";
-		break;
-	}
-	case 3:
-	{
-		cout << "´Prenda Dad Eliminada...";
-		break;
-	}
-
-	default:
-		break;
-	}
+	int EliminarPrenda;
+	CarritoCompras::Eliminar();
+	HIstorialCompras--;
 }
