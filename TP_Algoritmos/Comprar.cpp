@@ -60,30 +60,8 @@ void  Compras::MostrarCompra()
 
 void Compras::Aumentarprenda()
 {
-	int Prenda;
-	cout << "QUE PRENDA DESEA AGREGAR: ( 1:ad 2:da 3:Dad) ";
-	cin >> Prenda;
-	switch (Prenda)
-	{
-	case 1:
-	{
-		cout << "´Prenda ad Agregada...";
-		break;
-	}
-	case 2:
-	{
-		cout << "´Prenda ad Agregada...";
-		break;
-	}
-	case 3:
-	{
-		cout << "´Prenda Dad Agregada...";
-		break;
-	}
-
-	default:
-		break;
-	}
+	int NuevaPrenda;
+	CarritoCompras::agregar();
 }
 
 void Compras::EliminarPrenda()
