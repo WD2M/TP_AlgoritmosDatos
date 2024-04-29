@@ -1,6 +1,4 @@
 // CLASES AGREGADAS
-
-
 #include "CarritoCompras.h"
 #include "Favoritos.h"
 #include "CatalogoVestimenta.cpp"
@@ -146,7 +144,6 @@ void productos(CatalogoVestimenta<int>* lst) {
 int main() {
     // SE CREAN LOS PRODUCTOS
     productos(lst);
-
     int dato;
     
     cout << "----------------------------------------------------------------------" << endl;

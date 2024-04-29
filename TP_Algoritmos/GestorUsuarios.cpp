@@ -133,6 +133,7 @@ void GestorUsuarios::usuarioCliente(Usuario usua, float saldo, string tarjeta)
         case 2: {
             cout << "Ingrese Los Datos a comprar: \n";
             carritoCompra.Comprar();
+
             break;
         }
         case 3: {
