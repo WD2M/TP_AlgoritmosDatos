@@ -7,7 +7,8 @@ using namespace std;
 
 void CarritoCompras::agregar(int a)
 {
-	cout << "Evento Agregar Compras \n";
+	Compras compra;
+	compra.Aumentarprenda();
 }
 
 int CarritoCompras::getCodigo(int a)

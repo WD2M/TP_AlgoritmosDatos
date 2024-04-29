@@ -193,23 +193,25 @@ int main() {
                 
                 switch (n)
                 {
-                case 3: {
-                    cout << "---------------------------" << endl;
-                    cout << "***Carrito de Compras***\n";
-                    cout << "---------------------------" << endl;
-                    int carro;
-                    cout << "------------------------------------------" << endl;
-                    cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: 4: Historial" << endl;
-                    cout << "------------------------------------------" << endl;
-                    cin >> carro;
-                    CarritoCompras carritoCompra;
+                case 3: {                    
+                    while (1>0)
+                    {
+                        cout << "---------------------------" << endl;
+                        cout << "***Carrito de Compras***\n";
+                        cout << "---------------------------" << endl;
+                        int carro;
+                        cout << "------------------------------------------" << endl;
+                        cout << "   Elija el tipo de accion a realizar\n1: Agregar, 2: Comprar, 3: Eliminar: 4: Historial" << endl;
+                        cout << "------------------------------------------" << endl;
+                        cin >> carro;
+                        CarritoCompras carritoCompra;
 
 
-                    int a;
-                    switch (carro) {
-                    case 1: {
-                        int opcion;
-                        cout << "DESEA COMPRAR ROPA DE HOMBRE(1) O ROPA DE MUJER(2), ELIJA LA OPCION:";
+                        int a;
+                        switch (carro) {
+                        case 1: {
+                            int opcion;
+                            cout << "DESEA COMPRAR ROPA DE HOMBRE(1) O ROPA DE MUJER(2), ELIJA LA OPCION:";
                             cin >> opcion;
                             if (opcion == 1)
                             {
@@ -222,27 +224,29 @@ int main() {
                             cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
                             cin >> codigo;
                             break;
-                    }
-                    case 2: {
-                        cout << "Ingrese Los Datos a comprar: \n";
-                        carritoCompra.Comprar();
+                        }
+                        case 2: {
+                            cout << "Ingrese Los Datos a comprar: \n";
+                            carritoCompra.Comprar();
 
-                        break;
+                            break;
+                        }
+                        case 3: {
+                            cout << "Ingrese Los Datos a Eliminar: \n";
+                            carritoCompra.Eliminar();
+                            break;
+                        }
+                        case 4: {
+                            cout << "Los Datos del Historial son: \n";
+                            carritoCompra.Historial();
+                            MostrarVestimenta(lst, codigo);
+                            break;
+                        }
+                        default:
+                            cerr << "Tipo de datos no válido\n";
+                        }
                     }
-                    case 3: {
-                        cout << "Ingrese Los Datos a Eliminar: \n";
-                        carritoCompra.Eliminar();
-                        break;
-                    }
-                    case 4: {
-                        cout << "Los Datos del Historial son: \n";
-                        carritoCompra.Historial();
-                        MostrarVestimenta(lst, codigo);
-                        break;
-                    }
-                    default:
-                        cerr << "Tipo de datos no válido\n";
-                    }
+                    
                     break;
                 }
                 default:
