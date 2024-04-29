@@ -21,10 +21,10 @@ void CarritoCompras::Eliminar()
 	cout << "Evento Eliminar Compras \n";
 }
 
-void CarritoCompras::Comprar()
+void CarritoCompras::Comprar(float gasto)
 {
 	Compras compras;
-	compras.MostrarCompra();
+	compras.MostrarCompra(gasto);
 }
 
 void CarritoCompras::Historial()

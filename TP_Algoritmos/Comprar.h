@@ -14,7 +14,7 @@ public:
 	void Comprar(string TipoMoneda, string MetodoPago, float Total);
 	string RealizarCompra(string TipoMoneda, string MetodoPago);
 	string CalcularPago(float Total);
-    void MostrarCompra();
+    void MostrarCompra(float precio);
 	void Aumentarprenda();
 	
 	void EliminarPrenda();

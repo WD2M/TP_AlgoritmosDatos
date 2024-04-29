@@ -9,7 +9,7 @@ public:
 	void agregar(int a);
 	int getCodigo(int a);
 	void Eliminar();
-	void Comprar();
+	void Comprar(float gasto);
 	void Historial();
 };
 

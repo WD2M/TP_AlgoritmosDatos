@@ -42,32 +42,24 @@ string Compras::CalcularPago(float Total)
 	}
 }
 
-void  Compras::MostrarCompra()
+void  Compras::MostrarCompra(float precio)
 {
 	auto UnionEventos = [&](float total, string TipoMoneda, string MetodoPago) {
-	return CalcularPago(total) + RealizarCompra(TipoMoneda,MetodoPago);
-};
-	float Total;
-	cout << "El total del pago es:";
-	cin >>Total;
-	string TipoMoneda,MetodoPago;
+		return CalcularPago(total) + RealizarCompra(TipoMoneda, MetodoPago);
+		};
+	string TipoMoneda, MetodoPago;
 	cout << "El tipo de pago es:";
-	cin >>MetodoPago;
+	cin >> MetodoPago;
 	cout << "El tipo de moneda es:";
-	cin >>TipoMoneda;
-	cout << UnionEventos(Total, TipoMoneda, MetodoPago);
+	cin >> TipoMoneda;
+	cout << UnionEventos(precio, TipoMoneda, MetodoPago) << endl;
 }
 
 void Compras::Aumentarprenda()
 {
-	int NuevaPrenda;
-	CarritoCompras::agregar();
-	HIstorialCompras++;
 }
 
 void Compras::EliminarPrenda()
 {
-	int EliminarPrenda;
-	CarritoCompras::Eliminar();
-	HIstorialCompras--;
 }
+
