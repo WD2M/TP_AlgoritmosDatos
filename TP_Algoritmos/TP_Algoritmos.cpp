@@ -20,7 +20,23 @@ using namespace std;
 Vestimenta* vestimenta = new Vestimenta;
 CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
 
+void Ordenamientomenor_mayor(int codigo[], int tamanio)
+{
+    for (int i = 0; i < tamanio; i++)
+    {
+        for (int j = i; j < tamanio; j++)
+        {
+            if (codigo[i] >= codigo[j])
+            {
+                int old = codigo[i];
+                codigo[i] = codigo[j];
+                codigo[j] = old;
+            }
+        }
 
+    }
+
+}
 void MostrarVestimenta(CatalogoVestimenta<int>* lst, int i) {
     cout << lst->getcodVestimenta(i) << endl;
     cout << lst->getPrecio(i) << endl;
@@ -226,6 +242,9 @@ int main() {
                             cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
                             cin >> codigo[tamanio];
                             tamanio++;
+                            
+                            Ordenamientomenor_mayor(codigo,tamanio);
+
                             break;
                         }
                         case 2: {
