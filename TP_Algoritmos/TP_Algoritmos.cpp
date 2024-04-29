@@ -144,7 +144,7 @@ int main() {
     // SE CREAN LOS PRODUCTOS
     productos(lst);
     int dato;
-    
+    int codigo = 0;
     cout << "----------------------------------------------------------------------" << endl;
     cout << "                         BIENVENIDO A SHEIN!                          "  << endl;
     cout << "----------------------------------------------------------------------" << endl;
@@ -190,6 +190,7 @@ int main() {
                 int n;
                 cout << "PARA INGRESAR AL CARRITO DE COMPRAS PRESIONA 3" << endl;
                 cin >> n;
+                
                 switch (n)
                 {
                 case 3: {
@@ -218,8 +219,9 @@ int main() {
                             {
                                 catalogoMujeres();
                             }
-                        cout << "Ingrese Los Datos a agregar: \n";
-                        break;
+                            cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
+                            cin >> codigo;
+                            break;
                     }
                     case 2: {
                         cout << "Ingrese Los Datos a comprar: \n";
@@ -235,6 +237,7 @@ int main() {
                     case 4: {
                         cout << "Los Datos del Historial son: \n";
                         carritoCompra.Historial();
+                        MostrarVestimenta(lst, codigo);
                         break;
                     }
                     default:
@@ -247,6 +250,7 @@ int main() {
                 }
 
                 break;
+                
             }
             default:
                 cerr << "Tipo de datos no válido\n";
