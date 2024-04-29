@@ -229,8 +229,12 @@ int main() {
                             break;
                         }
                         case 2: {
+                            int gasto = 0;
                             cout << "Ingrese Los Datos a comprar: \n";
-                            int gasto = lst->getPrecio(codigo[tamanio]);
+                            for (int i = 0; i < tamanio; i++)
+                            {
+                                gasto =+ lst->getPrecio(codigo[i]);
+                            }
                             carritoCompra.Comprar(gasto);
                             break;
                         }
