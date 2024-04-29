@@ -30,11 +30,11 @@ int main() {
     cout << "Ingrese Los Datos a agregar: \n";
     lst->setVestimenta(12, 32, "aa", "a", "b", 's', "ad", false);
     lst->getcodVestimenta(0);
-    /*
+    
     int dato;
     //cout << lst->getEstacionAnio(0);
     cout << "--------------------------------------------------" << endl;
-    cout << "       Elija el tipo de accion a realizar\n1: Usuario, 2: Favoritos, 3: Carrito de Compras:" << endl;
+    cout << "       Bienvenido a SHEIN registre un usuario 1: Usuario" << endl;
     cout << "--------------------------------------------------" << endl;
     cin >> dato;
 
@@ -42,7 +42,7 @@ int main() {
     case 1: {
         int dato;
         cout << "------------------------------------------" << endl;
-        cout << "   Elija el tipo de accion a realizar\n1: Enviar Correo, 2: Registrar Usuarios:" << endl;
+        cout << "   Elija el tipo de accion a realizar\n 2: Registrar Usuarios:" << endl;
         cout << "------------------------------------------" << endl;
         cin >> dato;
         GestorUsuarios usuario;
@@ -168,6 +168,6 @@ int main() {
     default:
         cerr << "Tipo de datos no válido\n";
     }
-    */
+    
     system("pause>0");
 }

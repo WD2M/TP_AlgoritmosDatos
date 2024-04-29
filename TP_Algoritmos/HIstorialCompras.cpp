@@ -2,6 +2,7 @@
 
 void HIstorialCompras::HistorialCompras()
 {
+
 }
 
 bool HIstorialCompras::colaVacia(Nodo* frente)

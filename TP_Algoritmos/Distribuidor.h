@@ -1,6 +1,7 @@
 #pragma once
 #include "Usuario.h"
-class Distribuidor : Usuario
+#include "Marca.h"
+class Distribuidor : public Usuario
 {
 public:
 	string ubicacion;
