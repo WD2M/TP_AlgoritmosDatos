@@ -1,6 +1,11 @@
-#include "Comprar.h"
-
-
+#include "CarritoCompras.h"
+#include "Favoritos.h"
+#include "CatalogoVestimenta.cpp"
+#include "HIstorialCompras.h"
+#include "Temporada.cpp"
+#include "Oferta.cpp"
+#include "Marca.cpp"
+#include "GestorUsuarios.h"
 void Compras::Comprar(string TipoMoneda, string MetodoPago, float Total)
 {
 	this->TipoMoneda = TipoMoneda;
@@ -22,6 +27,7 @@ string Compras::RealizarCompra(string TipoMoneda, string MetodoPago)
 
 string Compras::CalcularPago(float Total)
 {
+	
 	if (Total <=  0) {
 		return "El valor de la compra es de 0";
 	}

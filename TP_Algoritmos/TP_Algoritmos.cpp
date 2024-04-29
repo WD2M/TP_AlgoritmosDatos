@@ -8,7 +8,6 @@
 #include "Oferta.cpp"
 #include "Marca.cpp"
 #include "GestorUsuarios.h"
-
 // ENCABEZADO
 #include <iostream>
 #include <string>
@@ -147,8 +146,10 @@ int main() {
     int dato;
     
     cout << "----------------------------------------------------------------------" << endl;
-    cout << "       BIENVENIDO A SHEIN!, presione 1 para registrar un usuario" << endl;
+    cout << "                         BIENVENIDO A SHEIN!,  << endl;
     cout << "----------------------------------------------------------------------" << endl;
+    cout << "¿DESEA REGISTRAR USUARIO? PRESIONE 1:" << endl;
+    cout << "-------------------------------------" << endl;
     cin >> dato;
     
     switch (dato) {
