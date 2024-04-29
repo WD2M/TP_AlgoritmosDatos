@@ -97,46 +97,46 @@ void productos(CatalogoVestimenta<int>* lst) {
 
     // VERANO
 
-    lst->setVestimenta(1, 120, "Camiseta", "azul", "M, L, XL", 'M');
-    lst->setVestimenta(2, 122, "Polo", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(3, 190, "Short", "rojo", "M, L, XL", 'M');
+    lst->setVestimenta(23, 120, "Camiseta", "azul", "M, L, XL", 'M');
+    lst->setVestimenta(22, 122, "Polo", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(21, 190, "Short", "rojo", "M, L, XL", 'M');
     // INVIERNO
 
-    lst->setVestimenta(4, 245, "Abrigo", "rosado", "M, L, XL", 'M');
-    lst->setVestimenta(5, 200, "Sueter", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(6, 140, "Buzo", "rojo", "M, L, XL", 'M');
+    lst->setVestimenta(20, 245, "Abrigo", "rosado", "M, L, XL", 'M');
+    lst->setVestimenta(19, 200, "Sueter", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(18, 140, "Buzo", "rojo", "M, L, XL", 'M');
     // OTONIO
 
-    lst->setVestimenta(7, 323, "Chaqueta", "rosado", "M, L, XL", 'M');
-    lst->setVestimenta(8, 269, "Sudadera", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(9, 230, "Jeans", "rojo", "M, L, XL", 'M');
+    lst->setVestimenta(17, 323, "Chaqueta", "rosado", "M, L, XL", 'M');
+    lst->setVestimenta(16, 269, "Sudadera", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(15, 230, "Jeans", "rojo", "M, L, XL", 'M');
     // PRIMAVERA
 
-    lst->setVestimenta(10, 328, "Camisa", "rosado", "M, L, XL", 'M');
-    lst->setVestimenta(11, 280, "Polera", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(14, 328, "Camisa", "rosado", "M, L, XL", 'M');
+    lst->setVestimenta(13, 280, "Polera", "gris", "M, L, XL", 'M');
     lst->setVestimenta(12, 100, "Bermuda", "rojo", "M, L, XL", 'M');
 
     // FEMENINO
 
     // VERANO
-    lst->setVestimenta(13, 120, "Top", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(14, 420, "Vestido", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(15, 320, "Camiseta", "rojo", "XS, S, M", 'F');
+    lst->setVestimenta(11, 120, "Top", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(10, 420, "Vestido", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(9, 320, "Camiseta", "rojo", "XS, S, M", 'F');
     // INVIERNO
 
-    lst->setVestimenta(16, 223, "Abrigo", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(17, 380, "Jerseys", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(18, 101, "Bufanda", "rojo", "XS, S, M", 'F');
+    lst->setVestimenta(8, 223, "Abrigo", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(7, 380, "Jerseys", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(6, 101, "Bufanda", "rojo", "XS, S, M", 'F');
     // OTONIO
 
-    lst->setVestimenta(19, 281, "Sueter", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(20, 179, "Chaqueta", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(21, 210, "Pantalones", "rojo", "XS, S, M", 'F');
+    lst->setVestimenta(5, 281, "Sueter", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(4, 179, "Chaqueta", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(3, 210, "Pantalones", "rojo", "XS, S, M", 'F');
     // PRIMAVERA
 
-    lst->setVestimenta(22, 299, "Vestido", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(23, 100, "Falda", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(24, 119, "Short", "azul", "XS, S, M", 'F');
+    lst->setVestimenta(2, 299, "Vestido", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(1, 100, "Falda", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(0, 119, "Short", "azul", "XS, S, M", 'F');
 }
 
 
@@ -239,8 +239,34 @@ int main() {
                             break;
                         }
                         case 3: {
-                            cout << "Ingrese Los Datos a Eliminar: \n";
+                            int CodigoPrenda;
+                            cout << "Ingrese El codigo de la prenda a eliminar: \n";
+                            cin >> CodigoPrenda;
+                            for (int i = 0; i < tamanio;  i++)
+                            {
+                                
+                                if (CodigoPrenda == codigo[i])
+                                {
+
+                                    if (codigo[i + 1] != 0)
+                                    {
+                                        codigo[i] = codigo[i + 1];
+                                        for (int j = i; j < tamanio; j++)
+                                        {
+                                            codigo[j] = codigo[j + 1];
+                                        }
+
+                                        tamanio--;
+                                        cout << "PRENDA ELIMINADA:..";
+                                        break;
+                                    }
+                                }
+                            }
                             carritoCompra.Eliminar();
+                            
+
+
+
                             break;
                         }
                         case 4: {
