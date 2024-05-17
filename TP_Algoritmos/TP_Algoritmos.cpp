@@ -8,6 +8,7 @@
 #include "Oferta.cpp"
 #include "Marca.cpp"
 #include "GestorUsuarios.h"
+
 // ENCABEZADO
 #include <iostream>
 #include <string>
@@ -216,6 +217,7 @@ int main() {
     int dato;
     int tamanio = 0;
     int codigo[100];
+    int saldazo;
 
     Marco("    REGISTRO DE USUARIO    ", " (1) Correo (2) Usuarios ", PURPLE, 2);
     cout << BLACK; cin >> dato; cout << BLANK;
@@ -227,11 +229,12 @@ int main() {
         Marco("        ENVIO CORREO       ", " ", BLUE, 1);
         usuario.EnviarCorreo();
         break;
-    }
+    } 
     case 2: {
 
         Marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
         int dato; cout << BLACK; cin >> dato; cout << BLANK;
+
         Marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
         int datoUsuario; cout << BLACK; cin >> datoUsuario; cout << BLANK;
 
@@ -241,7 +244,7 @@ int main() {
             break;
         }
         case 2: {
-            usuario.CrearUsuariosCliente(dato, 1);
+            saldazo = usuario.CrearUsuariosCliente(dato, 1);
             int n;
             cin.get();
             while (1 > 0)
@@ -279,12 +282,20 @@ int main() {
                     {
                         gasto = +lst->getPrecio(codigo[i]);
                     }
-                    carritoCompra.Comprar(gasto);
+                    if (gasto > saldazo) {
+                        cout << endl << FALSE << "Saldo Insuficiente" << endl << endl;
+                        break;
+                    }
+                    else {
+                        carritoCompra.Comprar(gasto);
+                        return 0;
+                    }
+                    
                     break;
                 }
                 case 3: {
                     int CodigoPrenda;
-                    cout << "Ingrese El codigo de la prenda a eliminar: \n";
+                    cout << "Ingrese el codigo de la prenda a eliminar: \n";
                     cin >> CodigoPrenda;
                     for (int i = 0; i < tamanio; i++)
                     {

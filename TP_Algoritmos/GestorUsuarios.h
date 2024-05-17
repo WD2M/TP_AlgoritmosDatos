@@ -13,7 +13,7 @@ public:
 	Usuario CrearUsuarios(int posUsuario);
 	void CrearUsuariosDistribuidor(int cantidad, int inicial);
 	void CrearUsuariosVendedor(int cantidad, int inicial);
-	void CrearUsuariosCliente(int cantidad, int inicial);
+	int CrearUsuariosCliente(int cantidad, int inicial);
 	void usuarioDistribuidor(Usuario usua, string ubicacion, string contacto);
 	void usuarioVendedor(Usuario usua, float ventas, string empresa);
 	void usuarioCliente(Usuario usua, float saldo, string tarjeta);

@@ -69,7 +69,7 @@ void GestorUsuarios::CrearUsuariosVendedor(int cantidad, int inicial)
     }
 }
 
-void GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
+int GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
 {
     Usuario usua = CrearUsuarios(inicial);
 
@@ -87,6 +87,7 @@ void GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
     if (cantidad > 0) {
         CrearUsuariosCliente(cantidad, inicial);
     }
+    return saldo;
 }
 
 void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, string contacto)
