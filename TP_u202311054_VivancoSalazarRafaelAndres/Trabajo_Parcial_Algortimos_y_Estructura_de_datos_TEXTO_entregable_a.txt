@@ -1,0 +1,30 @@
+Rafael Andres Vivanco Salazar(CALIFICACION: 20)
+-Participó activamente en el diagrama de clases del proyecto
+-Desarrollo de métodos y atributos de la clase Catálogo Vestimenta
+-Desarrollo de métodos y atributos de la clase Oferta
+-Desarrollo de métodos y atributos de la clase Temporada
+Desarrollo de métodos y atributos de la clase Marca
+-Implementacion de Pila y COla
+Esteban Román, Henry Kalet(CALIFICACION: 20)
+-Participó activamente en el diagrama de clases del proyecto
+-Desarrollo de métodos y atributos de la clase Envío
+-Desarrollo de métodos y atributos de la clase Pedido
+-Desarrollo de métodos y atributos de la clase Comprar
+-Desarrollo de Big O
+-Implementacion de Pila y COla
+Wilmar Daniel Moreno Mateus(CALIFICACION: 20)
+Participó activamente en el diagrama de clases del proyecto
+Desarrollo de métodos y atributos de la clase Usuario
+Desarrollo de métodos y atributos de la clase Distribuidor
+Desarrollo de métodos y atributos de la clase Vendedor
+Desarrollo de métodos y atributos de la clase Cliente 
+Desarrollo de métodos y atributos de la clase Carrito Compra
+-Desarrollo de Big O
+-Implementacion de Pila y COla
+
+
+
+
+
+
+

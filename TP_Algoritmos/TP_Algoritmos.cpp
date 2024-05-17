@@ -1,4 +1,4 @@
-// CLASES AGREGADAS
+ï»¿// CLASES AGREGADAS
 #include "CarritoCompras.h"
 #include "Favoritos.h"
 #include "CatalogoVestimenta.cpp"
@@ -14,6 +14,21 @@
 #include <sstream>
 #include <cmath>
 
+#define BLANK "\033[38;2;248;243;212m"
+#define ORANGE "\033[38;2;229;107;59m"
+#define AQUA "\033[38;2;0;184;169m"
+#define YELLOW "\033[38;2;255;222;125m"
+#define PINK "\033[38;2;246;65;108m"
+#define RESET "\033[0m" 
+#define TRUE "\033[38;2;20;206;138m"
+#define DARK_GREEN "\033[32m"
+#define FALSE "\033[38;2;244;56;79m"
+#define PURPLE "\033[38;2;128;0;128m"
+#define BLACK "\033[30m"
+#define BLUE "\033[34m"
+#define SKYBLUE "\033[36m"
+#define BRIGHT_SKYBLUE "\033[1;36m"
+#define PINK "\033[38;2;255;105;180m"
 
 using namespace std;
 
@@ -37,75 +52,18 @@ void Ordenamientomenor_mayor(int codigo[], int tamanio)
     }
 
 }
+
 void MostrarVestimenta(CatalogoVestimenta<int>* lst, int i) {
-    cout << lst->getcodVestimenta(i) << endl;
-    cout << lst->getPrecio(i) << endl;
-    cout << lst->getNombre(i) << endl;
-    cout << lst->getColor(i) << endl;
-    cout << lst->getTalla(i) << endl;
-    cout << lst->getGenero(i) << endl;
+    cout << TRUE << "*********************************" << BLANK << endl;
+    cout << TRUE << "->" << BLANK << lst->getcodVestimenta(i) << TRUE << "<-" << endl;
+    cout << TRUE << "* " << BLANK << lst->getPrecio(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getNombre(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getColor(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getTalla(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getGenero(i) << endl;
+    cout << TRUE << "*********************************" <<  BLANK << endl;
     cout << endl;
 
-}
-
-void catalogoMujeres()
-{
-    cout << "__________________________________________________________________________________________" << endl;
-    cout << "                                    SECCION MUJERES                                     " << endl;
-    cout << "__________________________________________________________________________________________" << endl;
-    cout << "   ______________" << "      " << "_________________" << "      " << "_______________" << "      " << "__________________" << endl;
-    cout << "   CATALGO VERANO" << "      " << "CATALOGO INVIERNO" << "      " << "CATALOGO OTONIO" << "      " << "CATALOGO PRIMAVERA" << endl;
-    cout << "   --------------" << "      " << "-----------------" << "      " << "---------------" << "      " << "------------------" << endl;
-    cout << "[CODIGO]" << "11" << "                    " << "8" << "                     " << "5" << "                " << "2" << endl;
-    cout << "[PRECIO]" << lst->getPrecio(11) << "                  " << lst->getPrecio(8) << "                     " << lst->getPrecio(5) << "               " << lst->getPrecio(2) << endl;
-    cout << "[PRENDA]" << lst->getNombre(11) << "               " << lst->getNombre(8) << "                       " << lst->getNombre(5) << "           " << lst->getNombre(2) << endl;
-    cout << "[COLOR] " << lst->getColor(11) << "                 " << lst->getColor(8) << "                 " << lst->getColor(5) << "          " << lst->getColor(2) << endl;
-    cout << "[TALLAS]" << lst->getTalla(11) << "              " << lst->getTalla(8) << "             " << lst->getTalla(5) << "           " << lst->getTalla(2) << endl;
-    cout << "[GENERO]" << lst->getGenero(11) << "                     " << lst->getGenero(8) << "                      " << lst->getGenero(5) << "                 " << lst->getGenero(2) << endl;
-    cout << endl << endl;
-    cout << "[CODIGO]" << "10" << "                    " << "7" << "                     " << "4" << "                " << "1" << endl;
-    cout << "[PRECIO]" << lst->getPrecio(10) << "                  " << lst->getPrecio(7) << "                     " << lst->getPrecio(4) << "               " << lst->getPrecio(1) << endl;
-    cout << "[PRENDA]" << lst->getNombre(10) << "               " << lst->getNombre(7) << "                " << lst->getNombre(4) << "         " << lst->getNombre(1) << endl;
-    cout << "[COLOR] " << lst->getColor(10) << "                 " << lst->getColor(7) << "                    " << lst->getColor(4) << "              " << lst->getColor(1) << endl;
-    cout << "[TALLAS]" << lst->getTalla(10) << "              " << lst->getTalla(7) << "             " << lst->getTalla(4) << "           " << lst->getTalla(1) << endl;
-    cout << "[GENERO]" << lst->getGenero(10) << "                     " << lst->getGenero(7) << "                      " << lst->getGenero(4) << "                 " << lst->getGenero(1) << endl;
-    cout << endl << endl;
-    cout << "[CODIGO]" << "9" << "                    " << "6" << "                     " << "3" << "                " << "0" << endl;
-    cout << "[PRECIO]" << lst->getPrecio(9) << "                  " << lst->getPrecio(6) << "                     " << lst->getPrecio(3) << "               " << lst->getPrecio(0) << endl;
-    cout << "[PRENDA]" << lst->getNombre(9) << "               " << lst->getNombre(6) << "                " << lst->getNombre(3) << "         " << lst->getNombre(0) << endl;
-    cout << "[COLOR] " << lst->getColor(9) << "                 " << lst->getColor(6) << "                    " << lst->getColor(3) << "              " << lst->getColor(0) << endl;
-    cout << "[TALLAS]" << lst->getTalla(9) << "              " << lst->getTalla(6) << "             " << lst->getTalla(3) << "           " << lst->getTalla(0) << endl;
-    cout << "[GENERO]" << lst->getGenero(9) << "                     " << lst->getGenero(6) << "                      " << lst->getGenero(3) << "                 " << lst->getGenero(0) << endl;
-}
-
-void catalogoHombres()
-{
-    cout << "__________________________________________________________________________________________" << endl;
-    cout << "                                    SECCION HOMBRES                                     " << endl;
-    cout << "__________________________________________________________________________________________" << endl;
-    cout << "   ______________" << "      " << "_________________" << "      " << "_______________" << "      " << "__________________" << endl;
-    cout << "   CATALGO VERANO" << "      " << "CATALOGO INVIERNO" << "      " << "CATALOGO OTONIO" << "      " << "CATALOGO PRIMAVERA" << endl;
-    cout << "   --------------" << "      " << "-----------------" << "      " << "---------------" << "      " << "------------------" << endl;
-    cout << "[CODIGO]" << "   23   " << "            " << "   20   " << "                  " << "   17   " << "                " << "   14   " << endl;
-    cout << "[PRECIO]" << lst->getPrecio(23) << "                  " << lst->getPrecio(20) << "                     " << lst->getPrecio(17) << "            " << lst->getPrecio(14) << endl;
-    cout << "[PRENDA]" << lst->getNombre(23) << "            " << lst->getNombre(20) << "                  " << lst->getNombre(17) << "         " << lst->getNombre(14) << endl;
-    cout << "[COLOR] " << lst->getColor(23) << "                 " << lst->getColor(20) << "                 " << lst->getColor(17) << "             " << lst->getColor(14) << endl;
-    cout << "[TALLAS]" << lst->getTalla(23) << "              " << lst->getTalla(20) << "               " << lst->getTalla(17) << "         " << lst->getTalla(14) << endl;
-    cout << "[GENERO]" << lst->getGenero(23) << "                    " << lst->getGenero(20) << "                      " << lst->getGenero(17) << "                 " << lst->getGenero(14) << endl;
-    cout << endl << endl;
-    cout << "[PRECIO]" << lst->getPrecio(22) << "                  " << lst->getPrecio(19) << "                     " << lst->getPrecio(16) << "               " << lst->getPrecio(13) << endl;
-    cout << "[CODIGO]" << "   22   " << "            " << "   19   " << "                   " << "   16   " << "                " << "   13   " << endl;
-    cout << "[PRENDA]" << lst->getNombre(22) << "               " << lst->getNombre(19) << "                " << lst->getNombre(16) << "           " << lst->getNombre(13) << endl;
-    cout << "[COLOR] " << lst->getColor(22) << "                 " << lst->getColor(19) << "                    " << lst->getColor(16) << "              " << lst->getColor(13) << endl;
-    cout << "[TALLAS]" << lst->getTalla(22) << "              " << lst->getTalla(19) << "             " << lst->getTalla(16) << "           " << lst->getTalla(13) << endl;
-    cout << "[GENERO]" << lst->getGenero(22) << "                     " << lst->getGenero(19) << "                      " << lst->getGenero(16) << "                 " << lst->getGenero(13) << endl;
-    cout << endl << endl;
-    cout << "[PRECIO]" << lst->getPrecio(21) << "                  " << lst->getPrecio(18) << "                        " << lst->getPrecio(15) << "               " << lst->getPrecio(12) << endl;
-    cout << "[CODIGO]" << "   21   " << "            " << "   18   " << "                   " << "   15   " << "                " << "   12   " << endl;
-    cout << "[PRENDA]" << lst->getNombre(21) << "               " << lst->getNombre(18) << "                     " << lst->getNombre(15) << "         " << lst->getNombre(12) << endl;
-    cout << "[COLOR] " << lst->getColor(21) << "                 " << lst->getColor(18) << "                    " << lst->getColor(15) << "              " << lst->getColor(12) << endl;
-    cout << "[TALLAS]" << lst->getTalla(21) << "              " << lst->getTalla(18) << "             " << lst->getTalla(15) << "           " << lst->getTalla(12) << endl;
-    cout << "[GENERO]" << lst->getGenero(21) << "                     " << lst->getGenero(18) << "                      " << lst->getGenero(15) << "                 " << lst->getGenero(12) << endl;
 }
 
 void productos(CatalogoVestimenta<int>* lst) {
@@ -155,41 +113,239 @@ void productos(CatalogoVestimenta<int>* lst) {
     lst->setVestimenta(0, 119, "Short", "azul", "XS, S, M", 'F');
 }
 
+// APARTADO GRAFICO
+void Bienvenido() {
+cout << PURPLE << "***********************************************************************************************************************************************" << endl;
+cout << PURPLE << "* "<< BLANK <<" _______  ___   _______  __    _  __   __  _______  __    _  ___   ______   _______    _______    _______  __   __  _______  ___   __    _  "<< PURPLE <<"*" << endl;
+cout << PURPLE << "* "<< BLANK <<"|  __   ||   | |    ___||   |_| ||  | |  ||    ___||   |_| ||   | |  _    ||   _   |  |  | |  |  |  _____||  | |  ||    ___||   | |   |_| | "<< PURPLE <<"*" << endl;
+cout << PURPLE << "* "<< BLANK <<"| |__|  ||   | |   |___ |       ||  | |  ||   |___ |       ||   | | | |   ||  | |  |  |  |_|  |  | |_____ |  |_|  ||   |___ |   | |       | "<< PURPLE <<"*" << endl;
+cout << PURPLE << "* "<< BLANK <<"|  __  | |   | |    ___||  _    ||  |_|  ||    ___||  _    ||   | | | |   ||  | |  |  |   _   |  |_____  ||   _   ||    ___||   | |  _    | "<< PURPLE <<"*" << endl;
+cout << PURPLE << "* "<< BLANK <<"| |__|  ||   | |   |___ | | |   | |     | |   |___ | | |   ||   | | |_|   ||  |_|  |  |  | |  |   _____| ||  | |  ||   |___ |   | | | |   | "<< PURPLE <<"*" << endl;
+cout << PURPLE << "* "<< BLANK <<"|_______||___| |_______||_|  |__|  |___|  |_______||_|  |__||___| |______| |_______|  |__| |__|  |_______||__| |__||_______||___| |_|  |__| "<< PURPLE <<"*" << endl;
+cout << PURPLE << "*                                                                                                                                             *" << endl;
+cout << PURPLE << "***********************************************************************************************************************************************" << endl;
+cout << "                                            *"<< BLANK <<" PRESIONA CUALQUIER TECLA PARA CONTINUAR..."<< PURPLE<<" *                                              " << endl;
+cout << "                                            **********************************************                                                     " << endl;
+cout << BLANK;
+}
+
+void Marco(string palabra, string palabra2, string color, int opc) {
+    if (opc == 1) {
+        cout << color << (char)201 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)187 << endl;
+        cout << (char)204 << BLANK << palabra << color << (char)185 << endl;
+        cout << color << (char)200 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)188 << endl;
+    } 
+    if (opc == 2) {
+        cout << color << (char)201 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)187 << endl;
+        cout << (char)204 << BLANK << palabra << color << (char)185 << endl;
+        cout << color << (char)200 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)188 << endl;
+        cout << " " << (char)204 << BLANK << palabra2 << color << (char)185 << " " << endl;
+        cout << color << " " << (char)200 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)188 << endl;
+    }
+    cout << BLANK;
+}
+
+void catalogoMujeres()
+{
+    cout << PINK << (char)201 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)187 << endl;
+    cout << PINK << (char)204 << BLANK << "                                    SECCION MUJERES                                     " << PINK << (char)185 << endl;
+    cout << PINK << (char)200 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)188 << endl;
+    cout << PINK << "   **************" << "      " << "*****************" << "      " << "***************" << "      " << "******************" << endl;
+    cout << BLANK << "   CATALGO VERANO" << "      " << "CATALOGO INVIERNO" << "      " << "CATALOGO OTONIO" << "      " << "CATALOGO PRIMAVERA" << endl;
+    cout << PINK << "   **************" << "      " << "*****************" << "      " << "***************" << "      " << "******************" << endl;
+    cout << PINK << "[CODIGO]" << BLANK << " 11" << "                    " << "8" << "                     " << "5" << "                      " << "2" << endl;
+    cout << PINK << "[PRECIO]" << BLANK << " " << lst->getPrecio(11) << "                   " << lst->getPrecio(8) << "                   " << lst->getPrecio(5) << "                    " << lst->getPrecio(2) << endl;
+    cout << PINK << "[PRENDA]" << BLANK << " " << lst->getNombre(11) << "                   " << lst->getNombre(8) << "                " << lst->getNombre(5) << "                 " << lst->getNombre(2) << endl;
+    cout << PINK << "[COLOR] " << BLANK << " " << lst->getColor(11) << "                " << lst->getColor(8) << "                " << lst->getColor(5) << "                 " << lst->getColor(2) << endl;
+    cout << PINK << "[TALLAS]" << BLANK << " " << lst->getTalla(11) << "              " << lst->getTalla(8) << "              " << lst->getTalla(5) << "               " << lst->getTalla(2) << endl;
+    cout << PINK << "[GENERO]" << BLANK << " " << lst->getGenero(11) << "                     " << lst->getGenero(8) << "                     " << lst->getGenero(5) << "                      " << lst->getGenero(2) << endl;
+    cout << endl << endl;
+    cout << PINK << "[CODIGO]" << BLANK << " 10" << "                    " << "7" << "                     " << "4" << "                      " << "1" << endl;
+    cout << PINK << "[PRECIO]" << BLANK << " " << lst->getPrecio(10) << "                   " << lst->getPrecio(7) << "                   " << lst->getPrecio(4) << "                    " << lst->getPrecio(1) << endl;
+    cout << PINK << "[PRENDA]" << BLANK << " " << lst->getNombre(10) << "               " << lst->getNombre(7) << "               " << lst->getNombre(4) << "               " << lst->getNombre(1) << endl;
+    cout << PINK << "[COLOR] " << BLANK << " " << lst->getColor(10) << "                  " << lst->getColor(7) << "                  " << lst->getColor(4) << "                   " << lst->getColor(1) << endl;
+    cout << PINK << "[TALLAS]" << BLANK << " " << lst->getTalla(10) << "              " << lst->getTalla(7) << "              " << lst->getTalla(4) << "               " << lst->getTalla(1) << endl;
+    cout << PINK << "[GENERO]" << BLANK << " " << lst->getGenero(10) << "                     " << lst->getGenero(7) << "                     " << lst->getGenero(4) << "                      " << lst->getGenero(1) << endl;
+    cout << endl << endl;
+    cout << PINK << "[CODIGO]" << BLANK << " 9" << "                    " << "6" << "                     " << "3" << "                       " << "0" << endl;
+    cout << PINK << "[PRECIO]" << BLANK << " " << lst->getPrecio(9) << "                  " << lst->getPrecio(6) << "                   " << lst->getPrecio(3) << "                     " << lst->getPrecio(0) << endl;
+    cout << PINK << "[PRENDA]" << BLANK << " " << lst->getNombre(9) << "             " << lst->getNombre(6) << "               " << lst->getNombre(3) << "              " << lst->getNombre(0) << endl;
+    cout << PINK << "[COLOR] " << BLANK << " " << lst->getColor(9) << "                 " << lst->getColor(6) << "                  " << lst->getColor(3) << "                    " << lst->getColor(0) << endl;
+    cout << PINK << "[TALLAS]" << BLANK << " " << lst->getTalla(9) << "             " << lst->getTalla(6) << "              " << lst->getTalla(3) << "                " << lst->getTalla(0) << endl;
+    cout << PINK << "[GENERO]" << BLANK << " " << lst->getGenero(9) << "                    " << lst->getGenero(6) << "                     " << lst->getGenero(3) << "                       " << lst->getGenero(0) << endl << endl;
+}
+
+void catalogoHombres()
+{
+    cout << BLUE << (char)201 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)187 << endl;
+    cout << BLUE << (char)204 << BLANK << "                                    SECCION HOMBRES                                     " << BLUE << (char)185 << endl;
+    cout << BLUE << (char)200 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)188 << endl;
+    cout << BLANK;
+    cout << BLUE << "   **************" << "      " << "*****************" << "      " << "***************" << "      " << "******************" << endl;
+    cout << BLANK <<"   CATALGO VERANO" << "      " << "CATALOGO INVIERNO" << "      " << "CATALOGO OTONIO" << "      " << "CATALOGO PRIMAVERA" << endl;
+    cout << BLUE << "   **************" << "      " << "*****************" << "      " << "***************" << "      " << "******************" << endl;
+    cout << BLUE << "[CODIGO]" << BLANK << " 23" << "                   " << "20" << "                     " << "17" << "                  " << "14" << endl;
+    cout << BLUE << "[PRECIO]" << BLANK << " " << lst->getPrecio(23) << "                  " << lst->getPrecio(20) << "                    " << lst->getPrecio(17) << "                 " << lst->getPrecio(14) << endl;
+    cout << BLUE << "[PRENDA]" << BLANK << " " << lst->getNombre(23) << "             " << lst->getNombre(20) << "                 " << lst->getNombre(17) << "            " << lst->getNombre(14) << endl;
+    cout << BLUE << "[COLOR] " << BLANK << " " << lst->getColor(23) << "                 " << lst->getColor(20) << "                 " << lst->getColor(17) << "              " << lst->getColor(14) << endl;
+    cout << BLUE << "[TALLAS]" << BLANK << " " << lst->getTalla(23) << "             " << lst->getTalla(20) << "               " << lst->getTalla(17) << "            " << lst->getTalla(14) << endl;
+    cout << BLUE << "[GENERO]" << BLANK << " " << lst->getGenero(23) << "                    " << lst->getGenero(20) << "                      " << lst->getGenero(17) << "                   " << lst->getGenero(14) << endl;
+    cout << endl << endl;
+    cout << BLUE << "[CODIGO]" << BLANK << " 22" << "                   " << "19" << "                     " << "16" << "                  " << "13" << endl;
+    cout << BLUE << "[PRECIO]" << BLANK << " " << lst->getPrecio(22) << "                  " << lst->getPrecio(19) << "                    " << lst->getPrecio(16) << "                 " << lst->getPrecio(13) << endl;
+    cout << BLUE << "[PRENDA]" << BLANK << " " << lst->getNombre(22) << "                 " << lst->getNombre(19) << "                 " << lst->getNombre(16) << "            " << lst->getNombre(13) << endl;
+    cout << BLUE << "[COLOR] " << BLANK << " " << lst->getColor(22) << "                 " << lst->getColor(19) << "                   " << lst->getColor(16) << "                " << lst->getColor(13) << endl;
+    cout << BLUE << "[TALLAS]" << BLANK << " " << lst->getTalla(22) << "             " << lst->getTalla(19) << "               " << lst->getTalla(16) << "            " << lst->getTalla(13) << endl;
+    cout << BLUE << "[GENERO]" << BLANK << " " << lst->getGenero(22) << "                    " << lst->getGenero(19) << "                      " << lst->getGenero(16) << "                   " << lst->getGenero(13) << endl;
+    cout << endl << endl;
+    cout << BLUE << "[CODIGO]" << BLANK << " 21" << "                   " << "18" << "                     " << "15" << "                  " << "12" << endl;
+    cout << BLUE << "[PRECIO]" << BLANK << " " << lst->getPrecio(21) << "                  " << lst->getPrecio(18) << "                    " << lst->getPrecio(15) << "                 " << lst->getPrecio(12) << endl;
+    cout << BLUE << "[PRENDA]" << BLANK << " " << lst->getNombre(21) << "                " << lst->getNombre(18) << "                   " << lst->getNombre(15) << "               " << lst->getNombre(12) << endl;
+    cout << BLUE << "[COLOR] " << BLANK << " " << lst->getColor(21) << "                 " << lst->getColor(18) << "                   " << lst->getColor(15) << "                " << lst->getColor(12) << endl;
+    cout << BLUE << "[TALLAS]" << BLANK << " " << lst->getTalla(21) << "             " << lst->getTalla(18) << "               " << lst->getTalla(15) << "            " << lst->getTalla(12) << endl;
+    cout << BLUE << "[GENERO]" << BLANK << " " << lst->getGenero(21) << "                    " << lst->getGenero(18) << "                      " << lst->getGenero(15) << "                   " << lst->getGenero(12) << endl << endl;
+}
 
 
 int main() {
+
     // SE CREAN LOS PRODUCTOS
     productos(lst);
+    Bienvenido();
+
     int dato;
     int tamanio = 0;
     int codigo[100];
-    cout << "----------------------------------------------------------------------" << endl;
-    cout << "                         BIENVENIDO A SHEIN!                          "  << endl;
-    cout << "----------------------------------------------------------------------" << endl;
-    cout << "DESEA REGISTRAR USUARIO? PRESIONE 1:" << endl;
-    cout << "-------------------------------------" << endl;
-    cin >> dato;
-    
+
+    Marco("    REGISTRO DE USUARIO    ", " (1) Correo (2) Usuarios ", PURPLE, 2);
+    cout << BLACK; cin >> dato; cout << BLANK;
+
+    GestorUsuarios usuario;
+
     switch (dato) {
     case 1: {
-        int dato;
-        cout << "---------------------------------------------" << endl;
-        cout << "   Presione 2 para registrar el nuevo usuario" << endl;
-        cout << "---------------------------------------------" << endl;
-        cin >> dato;
+        Marco("        ENVIO CORREO       ", " ", BLUE, 1);
+        usuario.EnviarCorreo();
+        break;
+    }
+    case 2: {
+
+        Marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
+        int dato; cout << BLACK; cin >> dato; cout << BLANK;
+        Marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
+        int datoUsuario; cout << BLACK; cin >> datoUsuario; cout << BLANK;
+
+        switch (datoUsuario) {
+        case 1: {
+            usuario.CrearUsuariosDistribuidor(dato, 1);
+            break;
+        }
+        case 2: {
+            usuario.CrearUsuariosCliente(dato, 1);
+            int n;
+            cin.get();
+            while (1 > 0)
+            {
+                Marco("      CARRITO DE COMPRAS   ", " escoja una operacion... ", DARK_GREEN, 2);
+                Marco("   1)Agregar    2)Comprar  ", " 3)Eliminar  4)Historial ", TRUE, 2);
+
+                int carro; cout << BLACK; cin >> carro; cout << BLANK;
+                CarritoCompras carritoCompra;
+                switch (carro) {
+                case 1: {
+                    Marco("    CARRITO DE COMPRAS     ", " escoja una operacion... ", AQUA, 2);
+                    Marco("      MOSTRAR CATALOGO     ", "   1) Hombre   2) Mujer  ", AQUA, 2);
+                    int opcion; cout << BLACK; cin >> opcion; cout << BLANK;
+                    if (opcion == 1)
+                    {
+                        catalogoHombres();
+                    }
+                    else if (opcion == 2)
+                    {
+                        catalogoMujeres();
+                    }
+                    cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
+                    cin >> codigo[tamanio];
+                    tamanio++;
+
+                    Ordenamientomenor_mayor(codigo, tamanio);
+
+                    break;
+                }
+                case 2: {
+                    int gasto = 0;
+                    cout << "Ingrese Los Datos a comprar: \n";
+                    for (int i = 0; i < tamanio; i++)
+                    {
+                        gasto = +lst->getPrecio(codigo[i]);
+                    }
+                    carritoCompra.Comprar(gasto);
+                    break;
+                }
+                case 3: {
+                    int CodigoPrenda;
+                    cout << "Ingrese El codigo de la prenda a eliminar: \n";
+                    cin >> CodigoPrenda;
+                    for (int i = 0; i < tamanio; i++)
+                    {
+
+                        if (CodigoPrenda == codigo[i])
+                        {
+
+                            if (codigo[i + 1] != 0)
+                            {
+                                codigo[i] = codigo[i + 1];
+                                for (int j = i; j < tamanio; j++)
+                                {
+                                    codigo[j] = codigo[j + 1];
+                                }
+
+                                tamanio--;
+                                cout << "PRENDA ELIMINADA:..";
+                                break;
+                            }
+                        }
+                    }
+                    carritoCompra.Eliminar();
+                    break;
+                }
+                case 4: {
+                    cout << "Los Datos del Historial son: \n";
+                    carritoCompra.Historial();
+                    for (int i = 0; i < tamanio; i++)
+                    {
+                        MostrarVestimenta(lst, codigo[i]);
+                    }
+
+                    break;
+                }
+                default:
+                    cerr << "Tipo de datos no vÃ¡lido\n";
+                }
+            }
+            break;
+        }
+        default:
+            cerr << "Tipo de datos no vÃ¡lido\n";
+        }
+        system("pause>0");
+    }
+    }
+}
+
+
+    /*
+    switch (dato) {
+    case 1: {
         GestorUsuarios usuario;
         switch (dato) {
         case 1: {
-            cout << "---------------------------" << endl;
-            cout << "   ***Envio de Correos***\n";
-            cout << "---------------------------" << endl;
+            Marco("        ENVIO CORREO       ", "waza", BLUE, 1);
             usuario.EnviarCorreo();
             break;
         }
         case 2: {
-            cout << "---------------------------" << endl;
-            cout << "   ***Crear Usuarios***\n";
-            cout << "---------------------------" << endl;
+            Marco("     CREAR USUARIO    ", "(1) Distribuidor (2) Cliente", BLUE, 2);
             int dato;
             cout << " Cuantos Usuarios desea Registrar?: ";
             cin >> dato;
@@ -299,7 +455,7 @@ int main() {
                             break;
                         }
                         default:
-                            cerr << "Tipo de datos no válido\n";
+                            cerr << "Tipo de datos no vÃ¡lido\n";
                         }
                     }
                     
@@ -313,12 +469,12 @@ int main() {
                 
             }
             default:
-                cerr << "Tipo de datos no válido\n";
+                cerr << "Tipo de datos no vÃ¡lido\n";
             }
             break;
         }
         default:
-            cerr << "Tipo de datos no válido\n";
+            cerr << "Tipo de datos no vÃ¡lido\n";
         }
         break;
     }
@@ -353,14 +509,12 @@ int main() {
             break;
         }
         default:
-            cerr << "Tipo de datos no válido\n";
+            cerr << "Tipo de datos no vÃ¡lido\n";
         }
         break;
     }
     
     default:
-        cerr << "Tipo de datos no válido\n";
+        cerr << "Tipo de datos no vÃ¡lido\n";
     }
-    
-    system("pause>0");
-}
+*/

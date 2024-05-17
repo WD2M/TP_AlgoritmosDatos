@@ -2,29 +2,24 @@
 #include "CarritoCompras.h"
 #include <iostream>
 
-#define BLUE "\033[34m"
-#define BLANK "\033[38;2;248;243;212m"
-#define SKYBLUE "\033[36m"
-#define BRIGHT_SKYBLUE "\033[1;36m"
-
 Usuario GestorUsuarios::CrearUsuarios(int posUsuario)
 {
     Usuario usuario;
-    cout << SKYBLUE << "<-" << BLANK << " INGRESE DATOS PARA EL USUARIO " + to_string(posUsuario) << SKYBLUE << ": " << "->" << endl;
+    cout << "Ingrese los datos para el Usuario " + to_string(posUsuario) + " :" << endl;
 
-    cout << SKYBLUE << "*" << BLANK << " INGRESE UN CODIGO DE USUARIO: ";
+    cout << "Ingrese un codigo de Usuario:";
     cin >> usuario.codUsuario;
 
-    cout << SKYBLUE << "*" << BLANK << " INGRESE UN NOMBRE: ";
+    cout << "Ingrese un nombre:";
     cin >> usuario.nombre;
 
-    cout << SKYBLUE << "*" << BLANK << " INGRESE UN APELLIDO: ";
+    cout << "Ingrese un apellido:";
     cin >> usuario.apellido;
 
-    cout << SKYBLUE << "*" << BLANK << " INGRESE UN DATO PERSONAL: ";
+    cout << "Ingrese un dato Personal:";
     cin >> usuario.datosPersonales;
 
-    cout << SKYBLUE << "*" << BLANK << " INGRESE UN CORREO: ";
+    cout << "Ingrese un correo:";
     cin >> usuario.correo;
     return usuario;
 }
@@ -34,11 +29,11 @@ void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
     Usuario usua = CrearUsuarios(inicial);
 
     string ubicacion;
-    cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE DATOS DE UBICACION: ";
+    cout << "Ingrese los Datos de Ubicacion:";
     cin >> ubicacion;
 
     string contacto;
-    cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE DATOS DEL CONTACTO: ";
+    cout << "Ingrese un Datos de Contacto:";
     cin >> contacto;
     usuarioDistribuidor(usua, ubicacion, contacto);
 
@@ -74,11 +69,11 @@ void GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
     Usuario usua = CrearUsuarios(inicial);
 
     float saldo;
-    cout << SKYBLUE << "*" << BLANK << " INGRESE LOS DATOS DEL SALDO: ";
+    cout << "Ingrese los Datos del saldo:";
     cin >> saldo;
 
     string tarjeta;
-    cout << SKYBLUE << "*" << BLANK << " INGRESE LOS DATOS DE LA TARJETA: ";
+    cout << "Ingrese un Datos de la tarjeta:";
     cin >> tarjeta;
     usuarioCliente(usua, saldo, tarjeta);
 
@@ -91,11 +86,10 @@ void GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
 
 void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, string contacto)
 {
-    cout << endl;
-    cout << BRIGHT_SKYBLUE << "**************************************************" << endl;
-    cout << BLANK << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
+    cout << "--------------------------------------------------" << endl;
+    cout << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + ubicacion + " " + contacto + "\n";
-    cout << BRIGHT_SKYBLUE << "**************************************************" << endl << endl;
+    cout << "--------------------------------------------------" << endl;
 }
 
 void GestorUsuarios::usuarioVendedor(Usuario usua, float ventas, string empresa)
@@ -108,11 +102,10 @@ void GestorUsuarios::usuarioVendedor(Usuario usua, float ventas, string empresa)
 
 void GestorUsuarios::usuarioCliente(Usuario usua, float saldo, string tarjeta)
 {
-    cout << endl;
-    cout << SKYBLUE << "**************************************************" << endl;
-    cout << BLANK <<"Usuario Cliente registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
+    cout << "--------------------------------------------------" << endl;
+    cout << "Usuario Cliente registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + to_string(saldo) + " " + tarjeta + "\n";
-    cout << SKYBLUE << "**************************************************" << endl << endl;
+    cout << "--------------------------------------------------" << endl;
 }
 
 string GestorUsuarios::RegistroContenido(string nombre)
@@ -126,10 +119,10 @@ void GestorUsuarios::EnviarCorreo()
         return Correo(correo) + RegistroContenido(contenido);
         };
     string correo;
-    cout << "Ingrese un correo: ";
+    cout << "Ingrese un correo:";
     cin >> correo;
     string contenido;
-    cout << "Ingrese el contenido: ";
+    cout << "Ingrese el contenido:";
     cin >> contenido;
     cout << EnvioCorreo(correo, contenido);
 }
