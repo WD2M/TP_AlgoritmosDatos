@@ -4,11 +4,13 @@
 #include "CarritoCompras.h"
 #include "Envio.h"
 #include "Cliente.h"
+#include "GestorUsuarios.h"
 using namespace std;
 class Compras
 {
 protected:
 	Envio Realizar_Envio_Compra;
+	GestorUsuarios Gestor_del_usuario;
 	Cliente codigousuario;
 	string TipoMoneda;
 	string MetodoPago;

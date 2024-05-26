@@ -5,11 +5,11 @@
 
 class GestorUsuarios
 {
-private:
+public:
 	Cliente cliente;
 	Vendedor vendedor;
 	Distribuidor distribuidor;
-public:
+
 	Usuario CrearUsuarios(int posUsuario);
 	void CrearUsuariosDistribuidor(int cantidad, int inicial);
 	void CrearUsuariosVendedor(int cantidad, int inicial);

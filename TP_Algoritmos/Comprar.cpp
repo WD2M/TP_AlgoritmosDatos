@@ -54,7 +54,7 @@ void  Compras::MostrarCompra(float precio)
 	cout << "El tipo de moneda es: ";
 	cin >> TipoMoneda;
 	cout << UnionEventos(precio, TipoMoneda, MetodoPago) << endl;
-	Realizar_Envio_Compra.IndicarEnviar(codigousuario.ubiciacion_del_usuario(), codigousuario.codigo_del_usuario(), "");
+	Realizar_Envio_Compra.IndicarEnviar(codigousuario.ubiciacion_del_usuario(), Gestor_del_usuario.cliente.codigo_del_usuario(), "");
 
 
 
