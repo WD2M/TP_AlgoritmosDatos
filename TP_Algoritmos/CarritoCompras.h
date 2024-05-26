@@ -7,9 +7,9 @@ private:
 	
 public:
 	void agregar(int a);
-	int getCodigo(int a);
-	void Eliminar();
-	void Comprar(float gasto);
+	int  getCodigo(int a);
+	void Eliminar(int tamanio, int codigoPrenda, int codigo[]);
+	void Comprar(float gasto, float saldo);
 	void Historial();
 };
 

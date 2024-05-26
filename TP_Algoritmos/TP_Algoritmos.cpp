@@ -245,7 +245,6 @@ int main() {
         }
         case 2: {
             saldazo = usuario.CrearUsuariosCliente(dato, 1);
-            int n;
             cin.get();
             while (1 > 0)
             {
@@ -253,7 +252,9 @@ int main() {
                 Marco("   1)Agregar    2)Comprar  ", " 3)Eliminar  4)Historial ", TRUE, 2);
 
                 int carro; cout << BLACK; cin >> carro; cout << BLANK;
+
                 CarritoCompras carritoCompra;
+
                 switch (carro) {
                 case 1: {
                     Marco("    CARRITO DE COMPRAS     ", " escoja una operacion... ", AQUA, 2);
@@ -282,42 +283,15 @@ int main() {
                     {
                         gasto = +lst->getPrecio(codigo[i]);
                     }
-                    if (gasto > saldazo) {
-                        cout << endl << FALSE << "Saldo Insuficiente" << endl << endl;
-                        break;
-                    }
-                    else {
-                        carritoCompra.Comprar(gasto);
-                        return 0;
-                    }
-                    
+                    carritoCompra.Comprar(gasto, saldazo);
+                    return 0;
                     break;
                 }
                 case 3: {
-                    int CodigoPrenda;
-                    cout << "Ingrese el codigo de la prenda a eliminar: \n";
-                    cin >> CodigoPrenda;
-                    for (int i = 0; i < tamanio; i++)
-                    {
-
-                        if (CodigoPrenda == codigo[i])
-                        {
-
-                            if (codigo[i + 1] != 0)
-                            {
-                                codigo[i] = codigo[i + 1];
-                                for (int j = i; j < tamanio; j++)
-                                {
-                                    codigo[j] = codigo[j + 1];
-                                }
-
-                                tamanio--;
-                                cout << "PRENDA ELIMINADA:..";
-                                break;
-                            }
-                        }
-                    }
-                    carritoCompra.Eliminar();
+                    int codigoPrenda;
+                    cout << "Ingrese el codigo de la prenda a eliminar: \n"; cin >> codigoPrenda;
+                    carritoCompra.Eliminar(tamanio, codigoPrenda, codigo);
+                    tamanio--;
                     break;
                 }
                 case 4: {
@@ -327,7 +301,6 @@ int main() {
                     {
                         MostrarVestimenta(lst, codigo[i]);
                     }
-
                     break;
                 }
                 default:

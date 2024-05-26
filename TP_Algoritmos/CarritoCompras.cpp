@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#define FALSE "\033[38;2;244;56;79m"
 
 void CarritoCompras::agregar(int a)
 {
@@ -16,15 +17,40 @@ int CarritoCompras::getCodigo(int a)
 	return a;
 }
 
-void CarritoCompras::Eliminar()
+void CarritoCompras::Eliminar(int tamanio, int codigoPrenda, int codigo[])
 {
-	cout << "Evento Eliminar Compras \n";
+    for (int i = 0; i < tamanio; i++)
+    {
+
+        if (codigoPrenda == codigo[i])
+        {
+
+            if (codigo[i + 1] != 0)
+            {
+                codigo[i] = codigo[i + 1];
+                for (int j = i; j < tamanio; j++)
+                {
+                    codigo[j] = codigo[j + 1];
+                }
+
+                tamanio--;
+                cout << "PRENDA ELIMINADA:.." << endl;
+                break;
+            }
+        }
+    }
+
 }
 
-void CarritoCompras::Comprar(float gasto)
+void CarritoCompras::Comprar(float gasto, float saldo)
 {
-	Compras compras;
-	compras.MostrarCompra(gasto);
+	if (gasto > saldo) {
+		cout << endl << FALSE << "Saldo Insuficiente" << endl << endl;
+	}
+	else {
+		Compras compras;
+		compras.MostrarCompra(gasto);
+	}
 }
 
 void CarritoCompras::Historial()

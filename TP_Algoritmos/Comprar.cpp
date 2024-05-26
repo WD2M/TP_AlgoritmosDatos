@@ -29,8 +29,6 @@ string Compras::RealizarCompra(string TipoMoneda, string MetodoPago)
 	cout << endl;
 }
 
-
-
 string Compras::CalcularPago(float Total)
 {
 	
