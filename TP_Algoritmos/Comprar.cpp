@@ -1,12 +1,9 @@
 #include "CarritoCompras.h"
-#include "Favoritos.h"
 #include "CatalogoVestimenta.cpp"
 #include "HIstorialCompras.h"
-#include "Temporada.cpp"
-#include "Oferta.cpp"
-#include "Marca.cpp"
 #include "GestorUsuarios.h"
-
+#include "Envio.h"
+#include "Usuario.h"
 #define AQUA "\033[38;2;0;184;169m"
 #define BLANK "\033[38;2;248;243;212m"
 
@@ -57,6 +54,10 @@ void  Compras::MostrarCompra(float precio)
 	cout << "El tipo de moneda es: ";
 	cin >> TipoMoneda;
 	cout << UnionEventos(precio, TipoMoneda, MetodoPago) << endl;
+	Realizar_Envio_Compra.IndicarEnviar(codigousuario.ubiciacion_del_usuario(), codigousuario.codigo_del_usuario(), "");
+
+
+
 }
 
 void Compras::Aumentarprenda()

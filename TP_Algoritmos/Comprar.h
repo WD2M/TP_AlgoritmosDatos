@@ -2,10 +2,14 @@
 #include<iostream>
 #include <string>
 #include "CarritoCompras.h"
+#include "Envio.h"
+#include "Cliente.h"
 using namespace std;
 class Compras
 {
 protected:
+	Envio Realizar_Envio_Compra;
+	Cliente codigousuario;
 	string TipoMoneda;
 	string MetodoPago;
 	float Total;

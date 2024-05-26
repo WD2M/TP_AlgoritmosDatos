@@ -17,3 +17,13 @@ void Cliente::CambiarTarjeta(string nuevaTarjeta)
 	tarjeta = nuevaTarjeta;
 	cout << "La nueva tarjeta es: " + tarjeta;
 }
+
+int  Cliente::codigo_del_usuario()
+{
+	return codUsuario;
+}
+
+string Cliente::ubiciacion_del_usuario()
+{
+	return Ubicacion_usuario;
+}

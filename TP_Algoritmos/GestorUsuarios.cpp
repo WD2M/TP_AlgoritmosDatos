@@ -21,8 +21,8 @@ Usuario GestorUsuarios::CrearUsuarios(int posUsuario)
     cout << SKYBLUE << "*" << BLANK << " INGRESE UN APELLIDO: ";
     cin >> usuario.apellido;
 
-    cout << SKYBLUE << "*" << BLANK << " INGRESE UN DATO PERSONAL: ";
-    cin >> usuario.datosPersonales;
+    cout << SKYBLUE << "*" << BLANK << " INGRESE UBICACION: ";
+    cin >> usuario.Ubicacion_usuario;
 
     cout << SKYBLUE << "*" << BLANK << " INGRESE UN CORREO: ";
     cin >> usuario.correo;
@@ -95,7 +95,7 @@ void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, string 
     cout << endl;
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl;
     cout << BLANK << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
-        + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + ubicacion + " " + contacto + "\n";
+        + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + ubicacion + " " + contacto + "\n";
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl << endl;
 }
 
@@ -103,7 +103,7 @@ void GestorUsuarios::usuarioVendedor(Usuario usua, float ventas, string empresa)
 {
     cout << "--------------------------------------------------" << endl;
     cout << "Usuario Vendedor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
-        + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + to_string(ventas) + " " + empresa + "\n";
+        + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + to_string(ventas) + " " + empresa + "\n";
     cout << "--------------------------------------------------" << endl;
 }
 
@@ -112,7 +112,7 @@ void GestorUsuarios::usuarioCliente(Usuario usua, float saldo, string tarjeta)
     cout << endl;
     cout << SKYBLUE << "**************************************************" << endl;
     cout << BLANK <<"Usuario Cliente registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
-        + usua.apellido + " " + usua.datosPersonales + " " + usua.correo + " " + to_string(saldo) + " " + tarjeta + "\n";
+        + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + to_string(saldo) + " " + tarjeta + "\n";
     cout << SKYBLUE << "**************************************************" << endl << endl;
 }
 

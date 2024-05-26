@@ -8,7 +8,7 @@ public:
 	int codUsuario;
 	string nombre;
 	string apellido;
-	string datosPersonales;
+	string Ubicacion_usuario;
 	string correo;
 	void GetUsuario();
 	string Login(string usuario, string contraseña);
