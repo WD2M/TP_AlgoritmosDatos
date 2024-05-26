@@ -12,5 +12,6 @@ public:
 	void CambiarTarjeta(string nuevaTarjeta);
 	int  codigo_del_usuario();
 	string ubiciacion_del_usuario();
+	void ClienteI(float saldo, string tarjeta, int codUsuario, string nombre, string apellido, string datosPersonales, string correo);
 };
 

@@ -111,6 +111,7 @@ void GestorUsuarios::usuarioCliente(Usuario usua, float saldo, string tarjeta)
 {
     cout << endl;
     cout << SKYBLUE << "**************************************************" << endl;
+    cliente.ClienteI(saldo, tarjeta, usua.codUsuario, usua.nombre, usua.apellido, usua.Ubicacion_usuario, usua.correo);
     cout << BLANK <<"Usuario Cliente registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + to_string(saldo) + " " + tarjeta + "\n";
     cout << SKYBLUE << "**************************************************" << endl << endl;
