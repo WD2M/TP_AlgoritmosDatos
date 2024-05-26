@@ -1,6 +1,6 @@
 #include "Envio.h"
 #include <stdlib.h>
-
+#include <functional>
 void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaEnvio)
 {
 	this->Ubicacion = Ubicacion;
@@ -11,7 +11,7 @@ void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaE
 
 void Envio::IndicarEnviar(string Ubicacion, int Codigo, string FechaEnvio)
 {
-	int  mes;
+	int  mes = 0;
 	int a= 1+ rand()%  (30  -1+1);
 	int b=1 + rand() % (30 - 1+1);
 	int c=1 + rand() % (30 - 1+1);
@@ -23,11 +23,11 @@ void Envio::IndicarEnviar(string Ubicacion, int Codigo, string FechaEnvio)
 	cout << "El codigo que se le asignara sera:";
 
 	cout << "Opcion 1:" << endl;
-	cout << mes / a/"24";
+	cout << mes <<"/"<<a<<"/24";
 	cout << "Opcion 2:" << endl;
-	cout << mes / b / "24";
+	cout << mes <<"/" << b<< "/24";
 	cout << "Opcion 3:" << endl;
-	cout << mes / c / "24";
+	cout << mes<< "/"<< c <<"/24";
 
 	cout << "Ingrese el mes que desee el envio:";
 	cin >> mes;
