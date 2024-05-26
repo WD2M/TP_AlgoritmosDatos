@@ -11,15 +11,31 @@ void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaE
 
 void Envio::IndicarEnviar(string Ubicacion, int Codigo, string FechaEnvio)
 {
-	
+	int  mes;
+	int a= 1+ rand()%  (30  -1+1);
+	int b=1 + rand() % (30 - 1+1);
+	int c=1 + rand() % (30 - 1+1);
 	cout << "-----------------------" << endl;
 	cout << ":REALIZACION DE PEDIDO:" << endl;
 	cout << "-----------------------" << endl;
 
 	cout << "Indique la direccion que desea ser enviado el pedido:"; cin >> Ubicacion;
 	cout << "El codigo que se le asignara sera:";
-	//Codigo= 
-	cout << "Diga la fecha que desee que se le entregue:"; cin >> FechaEnvio;
+
+	cout << "Opcion 1:" << endl;
+	cout << mes / a/"24";
+	cout << "Opcion 2:" << endl;
+	cout << mes / b / "24";
+	cout << "Opcion 3:" << endl;
+	cout << mes / c / "24";
+
+	cout << "Ingrese el mes que desee el envio:";
+	cin >> mes;
+	cout << "los siguientes dias posibles para el envio son los siguientes:";
+
+
+
+
 }
 
 void Envio::EstadodelEnvio(char EstadoEnvio)
