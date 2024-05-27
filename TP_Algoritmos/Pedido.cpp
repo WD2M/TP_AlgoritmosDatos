@@ -13,6 +13,10 @@ void Pedido::DetallesEnvio()
 
 }
 
+void Pedido::CancelarPedido()
+{
+}
+
 void Pedido::RealizarNuevoPedido()
 {
 	string NuevoPedido;

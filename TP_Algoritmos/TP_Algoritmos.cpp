@@ -282,7 +282,7 @@ int main() {
                     {
                         gasto = +lst->getPrecio(codigo[i]);
                     }
-                    carritoCompra.Comprar(gasto, saldazo);
+                    carritoCompra.Comprar(gasto, saldazo, usuario.cliente.codigo_del_usuario());
                     return 0;
                     break;
                 }

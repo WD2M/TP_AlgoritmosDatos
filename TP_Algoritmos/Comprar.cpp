@@ -43,7 +43,7 @@ string Compras::CalcularPago(float Total)
 	}
 }
 
-void  Compras::MostrarCompra(float precio)
+void  Compras::MostrarCompra(float precio, int codigo)
 {
 	auto UnionEventos = [&](float total, string TipoMoneda, string MetodoPago) {
 		return CalcularPago(total) + RealizarCompra(TipoMoneda, MetodoPago);
@@ -54,7 +54,7 @@ void  Compras::MostrarCompra(float precio)
 	cout << "El tipo de moneda es: ";
 	cin >> TipoMoneda;
 	cout << UnionEventos(precio, TipoMoneda, MetodoPago) << endl;
-	Realizar_Envio_Compra.IndicarEnviar(codigousuario.ubiciacion_del_usuario(), Gestor_del_usuario.cliente.codigo_del_usuario(), "");
+	Realizar_Envio_Compra.IndicarEnviar(codigousuario.ubiciacion_del_usuario(), codigo, "");
 
 
 

@@ -19,3 +19,4 @@ public:
 	void redirigirEnvio(string Ubicacion, int Codigo);
 };
 
+//gestor usuarios 

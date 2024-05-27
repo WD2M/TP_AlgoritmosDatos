@@ -42,14 +42,14 @@ void CarritoCompras::Eliminar(int tamanio, int codigoPrenda, int codigo[])
 
 }
 
-void CarritoCompras::Comprar(float gasto, float saldo)
+void CarritoCompras::Comprar(float gasto, float saldo, int codigo)
 {
 	if (gasto > saldo) {
 		cout << endl << FALSE << "Saldo Insuficiente" << endl << endl;
 	}
 	else {
 		Compras compras;
-		compras.MostrarCompra(gasto);
+		compras.MostrarCompra(gasto, codigo);
 	}
 }
 
