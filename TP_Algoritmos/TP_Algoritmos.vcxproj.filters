@@ -63,6 +63,12 @@
     <ClInclude Include="Distribuidor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pila.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cola.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pedido.cpp">
@@ -111,6 +117,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Distribuidor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pila.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cola.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

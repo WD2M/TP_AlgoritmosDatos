@@ -1,6 +1,9 @@
 #include "Envio.h"
 #include <stdlib.h>
 #include <functional>
+
+#define AQUA "\033[38;2;0;184;169m"
+#define BLANK "\033[38;2;248;243;212m"
 void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaEnvio)
 {
 	int opcion=0;
@@ -12,16 +15,16 @@ void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaE
 	this->EstadoEnvio = EstadoEnvio;
 	this->Codigo = Codigo;
 
-	cout << "Ingrese el mes que desee el envio:";
+	cout << "Ingrese el mes que desee el envio: ";
 	cin >> mes;
 	cout << "los siguientes dias posibles para el envio son los siguientes:";
-	cout << endl<<"Opcion 1:" << endl;
-	cout << mes << "/" << a << "/24";
-	cout << endl << "Opcion 2:" << endl;
-	cout << mes << "/" << b << "/24";
-	cout << endl << "Opcion 3:" << endl;
-	cout << mes << "/" << c << "/24";
-	cout << endl << "INGRESE LA OPCION A ELEGIR" << endl;
+	cout << endl<< AQUA << "Opcion 1:" << endl;
+	cout << BLANK << mes << "/" << a << "/24";
+	cout << endl << AQUA << "Opcion 2:" << endl;
+	cout << BLANK << mes << "/" << b << "/24";
+	cout << endl << AQUA << "Opcion 3:" << endl;
+	cout << BLANK << mes << "/" << c << "/24";
+	cout << endl << AQUA << "INGRESE LA OPCION A ELEGIR: " << BLANK <<endl;
 	cin >> opcion;
 	if(opcion==1)
 	{ 
@@ -40,14 +43,16 @@ void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaE
 void Envio::IndicarEnviar(string Ubicacion, int Codigo, string FechaEnvio)
 {
 
-
-	cout << "-----------------------" << endl;
-	cout << ":REALIZACION DE PEDIDO:" << endl;
-	cout << "-----------------------" << endl;
+	cout << AQUA;
+	cout << "***************************" << endl;
+	cout << "->" << BLANK << "REALIZACION DE PEDIDO" << AQUA << "<-" << endl;
+	cout << "***************************" << endl;
+	cout << BLANK;
 	Enviar("", ' ', 0, "");
-	cout << "El codigo que se le asignara sera: "<<Codigo<<endl;
+	cout << AQUA << "El codigo que se le asignara sera: "<< BLANK << Codigo<<endl;
 	//orden inserccion x hacer
-	cout << " El envio quedo programado para la siguiente fecha: " << this->FechaEnvio;
+	cout << AQUA << "El envio quedo programado para la siguiente fecha: " << BLANK << this->FechaEnvio;
+	cout << endl;
 	/*redirigirEnvio(Ubicacion, Codigo);*/
 
 }

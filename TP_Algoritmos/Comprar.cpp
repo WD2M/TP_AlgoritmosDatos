@@ -19,7 +19,7 @@ string Compras::RealizarCompra(string TipoMoneda, string MetodoPago)
 	cout << endl;
 	cout << AQUA << "*************************" << endl;
 	cout << AQUA <<"->" << BLANK << "REALIZACION DE COMPRA"<< AQUA << "<-" << endl;
-	cout << AQUA << "*************************" << endl;
+	cout << AQUA << "*************************" << BLANK << endl;
 
 
 	return " La realizacion de la compra se hizo con la moneda "+TipoMoneda + " con el metodo de pago "+ MetodoPago;
@@ -41,6 +41,7 @@ string Compras::CalcularPago(float Total)
 	else {
 		return "El valor de la compra es de: " + to_string(Total);
 	}
+	cout << endl;
 }
 
 void  Compras::MostrarCompra(float precio, int codigo)
@@ -49,6 +50,7 @@ void  Compras::MostrarCompra(float precio, int codigo)
 		return CalcularPago(total) + RealizarCompra(TipoMoneda, MetodoPago);
 		};
 	string TipoMoneda, MetodoPago;
+	cout << BLANK << "Ingrese Los Datos a comprar: \n";
 	cout << "El tipo de pago es: ";
 	cin >> MetodoPago;
 	cout << "El tipo de moneda es: ";

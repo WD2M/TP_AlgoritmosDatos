@@ -128,10 +128,10 @@ void GestorUsuarios::EnviarCorreo()
         return Correo(correo) + RegistroContenido(contenido);
         };
     string correo;
-    cout << "Ingrese un correo: ";
+    cout << BLUE << "- " << BLANK << "Ingrese un correo" << BLUE ": " << BLANK;
     cin >> correo;
     string contenido;
-    cout << "Ingrese el contenido: ";
+    cout << BLUE << "- " << BLANK << "Ingrese el contenido" << BLUE ": " << BLANK;
     cin >> contenido;
     cout << EnvioCorreo(correo, contenido);
 }

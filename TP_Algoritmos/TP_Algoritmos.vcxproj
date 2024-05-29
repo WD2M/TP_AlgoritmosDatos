@@ -130,6 +130,7 @@
     <ClInclude Include="CarritoCompras.h" />
     <ClInclude Include="CatalogoVestimenta.h" />
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="cola.h" />
     <ClInclude Include="Comprar.h" />
     <ClInclude Include="Distribuidor.h" />
     <ClInclude Include="Envio.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Marca.h" />
     <ClInclude Include="Oferta.h" />
     <ClInclude Include="Pedido.h" />
+    <ClInclude Include="pila.h" />
     <ClInclude Include="Temporada.h" />
     <ClInclude Include="Usuario.h" />
     <ClInclude Include="Vendedor.h" />
@@ -148,6 +150,7 @@
     <ClCompile Include="CarritoCompras.cpp" />
     <ClCompile Include="CatalogoVestimenta.cpp" />
     <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="cola.cpp" />
     <ClCompile Include="Comprar.cpp" />
     <ClCompile Include="Distribuidor.cpp" />
     <ClCompile Include="Envio.cpp" />
@@ -156,6 +159,7 @@
     <ClCompile Include="HIstorialCompras.cpp" />
     <ClCompile Include="Marca.cpp" />
     <ClCompile Include="Oferta.cpp" />
+    <ClCompile Include="pila.cpp" />
     <ClCompile Include="Temporada.cpp" />
     <ClCompile Include="TP_Algoritmos.cpp" />
     <ClCompile Include="Pedido.cpp" />

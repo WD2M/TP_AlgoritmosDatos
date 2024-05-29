@@ -42,9 +42,9 @@ void CarritoCompras::Eliminar(int tamanio, int codigoPrenda, int codigo[])
 
 }
 
-void CarritoCompras::Comprar(float gasto, float saldo, int codigo)
+void CarritoCompras::Comprar(float gasto, float saldazo, int codigo)
 {
-	if (gasto > saldo) {
+	if (gasto > saldazo) {
 		cout << endl << FALSE << "Saldo Insuficiente" << endl << endl;
 	}
 	else {

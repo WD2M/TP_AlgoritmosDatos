@@ -7,13 +7,17 @@
 #include "Oferta.cpp"
 #include "Marca.cpp"
 #include "GestorUsuarios.h"
+#include "pila.h"
+#include "cola.h"
 
 // ENCABEZADO
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <cmath>
+using namespace std;
 
+// COLORES
 #define BLANK "\033[38;2;248;243;212m"
 #define ORANGE "\033[38;2;229;107;59m"
 #define AQUA "\033[38;2;0;184;169m"
@@ -30,91 +34,14 @@
 #define BRIGHT_SKYBLUE "\033[1;36m"
 #define PINK "\033[38;2;255;105;180m"
 
-using namespace std;
-
+// LISTAS - PILAS AGREAGADAS
 Vestimenta* vestimenta = new Vestimenta;
 CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
-
-void Ordenamientomenor_mayor(int codigo[], int tamanio)
-{
-    for (int i = 0; i < tamanio; i++)
-    {
-        for (int j = i; j < tamanio; j++)
-        {
-            if (codigo[i] >= codigo[j])
-            {
-                int old = codigo[i];
-                codigo[i] = codigo[j];
-                codigo[j] = old;
-            }
-        }
-
-    }
-
-}
-
-void MostrarVestimenta(CatalogoVestimenta<int>* lst, int i) {
-    cout << TRUE << "*********************************" << BLANK << endl;
-    cout << TRUE << "->" << BLANK << lst->getcodVestimenta(i) << TRUE << "<-" << endl;
-    cout << TRUE << "* " << BLANK << lst->getPrecio(i) << endl;
-    cout << TRUE << "* " << BLANK << lst->getNombre(i) << endl;
-    cout << TRUE << "* " << BLANK << lst->getColor(i) << endl;
-    cout << TRUE << "* " << BLANK << lst->getTalla(i) << endl;
-    cout << TRUE << "* " << BLANK << lst->getGenero(i) << endl;
-    cout << TRUE << "*********************************" <<  BLANK << endl;
-    cout << endl;
-
-}
-
-void productos(CatalogoVestimenta<int>* lst) {
-    // MASCULINO
-
-    // VERANO
-
-    lst->setVestimenta(23, 120, "Camiseta", "azul", "M, L, XL", 'M');
-    lst->setVestimenta(22, 122, "Polo", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(21, 190, "Short", "rojo", "M, L, XL", 'M');
-    // INVIERNO
-
-    lst->setVestimenta(20, 245, "Abrigo", "rosado", "M, L, XL", 'M');
-    lst->setVestimenta(19, 200, "Sueter", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(18, 140, "Buzo", "rojo", "M, L, XL", 'M');
-    // OTONIO
-
-    lst->setVestimenta(17, 323, "Chaqueta", "rosado", "M, L, XL", 'M');
-    lst->setVestimenta(16, 269, "Sudadera", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(15, 230, "Jeans", "rojo", "M, L, XL", 'M');
-    // PRIMAVERA
-
-    lst->setVestimenta(14, 328, "Camisa", "rosado", "M, L, XL", 'M');
-    lst->setVestimenta(13, 280, "Polera", "gris", "M, L, XL", 'M');
-    lst->setVestimenta(12, 100, "Bermuda", "rojo", "M, L, XL", 'M');
-
-    // FEMENINO
-
-    // VERANO
-    lst->setVestimenta(11, 120, "Top", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(10, 420, "Vestido", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(9, 320, "Camiseta", "rojo", "XS, S, M", 'F');
-    // INVIERNO
-
-    lst->setVestimenta(8, 223, "Abrigo", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(7, 380, "Jerseys", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(6, 101, "Bufanda", "rojo", "XS, S, M", 'F');
-    // OTONIO
-
-    lst->setVestimenta(5, 281, "Sueter", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(4, 179, "Chaqueta", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(3, 210, "Pantalones", "rojo", "XS, S, M", 'F');
-    // PRIMAVERA
-
-    lst->setVestimenta(2, 299, "Vestido", "rosado", "XS, S, M", 'F');
-    lst->setVestimenta(1, 100, "Falda", "gris", "XS, S, M", 'F');
-    lst->setVestimenta(0, 119, "Short", "azul", "XS, S, M", 'F');
-}
+Pila pila;
+Cola cola;
 
 // APARTADO GRAFICO
-void Bienvenido() {
+void bienvenido() {
 cout << PURPLE << "***********************************************************************************************************************************************" << endl;
 cout << PURPLE << "* "<< BLANK <<" _______  ___   _______  __    _  __   __  _______  __    _  ___   ______   _______    _______    _______  __   __  _______  ___   __    _  "<< PURPLE <<"*" << endl;
 cout << PURPLE << "* "<< BLANK <<"|  __   ||   | |    ___||   |_| ||  | |  ||    ___||   |_| ||   | |  _    ||   _   |  |  | |  |  |  _____||  | |  ||    ___||   | |   |_| | "<< PURPLE <<"*" << endl;
@@ -129,7 +56,7 @@ cout << "                                            ***************************
 cout << BLANK;
 }
 
-void Marco(string palabra, string palabra2, string color, int opc) {
+void marco(string palabra, string palabra2, string color, int opc) {
     if (opc == 1) {
         cout << color << (char)201 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)205 << (char)187 << endl;
         cout << (char)204 << BLANK << palabra << color << (char)185 << endl;
@@ -206,35 +133,136 @@ void catalogoHombres()
     cout << BLUE << "[GENERO]" << BLANK << " " << lst->getGenero(21) << "                    " << lst->getGenero(18) << "                      " << lst->getGenero(15) << "                   " << lst->getGenero(12) << endl << endl;
 }
 
+// FUNCIONES EXTRAS
+void ordenamientoMenorMayor(int codigo[], int tamanio)
+{
+    for (int i = 0; i < tamanio; i++)
+    {
+        for (int j = i; j < tamanio; j++)
+        {
+            if (codigo[i] >= codigo[j])
+            {
+                int old = codigo[i];
+                codigo[i] = codigo[j];
+                codigo[j] = old;
+            }
+        }
+
+    }
+
+}
+
+void mostrarVestimenta(CatalogoVestimenta<int>* lst, int i) {
+    cout << TRUE << "*********************************" << BLANK << endl;
+    cout << TRUE << "->" << BLANK << lst->getcodVestimenta(i) << TRUE << "<-" << endl;
+    cout << TRUE << "* " << BLANK << lst->getPrecio(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getNombre(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getColor(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getTalla(i) << endl;
+    cout << TRUE << "* " << BLANK << lst->getGenero(i) << endl;
+    cout << TRUE << "*********************************" << BLANK << endl;
+    cout << endl;
+
+}
+
+void productos(CatalogoVestimenta<int>* lst) {
+    // MASCULINO
+
+    // VERANO
+
+    lst->setVestimenta(23, 120, "Camiseta", "azul", "M, L, XL", 'M');
+    lst->setVestimenta(22, 122, "Polo", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(21, 190, "Short", "rojo", "M, L, XL", 'M');
+    // INVIERNO
+
+    lst->setVestimenta(20, 245, "Abrigo", "rosado", "M, L, XL", 'M');
+    lst->setVestimenta(19, 200, "Sueter", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(18, 140, "Buzo", "rojo", "M, L, XL", 'M');
+    // OTONIO
+
+    lst->setVestimenta(17, 323, "Chaqueta", "rosado", "M, L, XL", 'M');
+    lst->setVestimenta(16, 269, "Sudadera", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(15, 230, "Jeans", "rojo", "M, L, XL", 'M');
+    // PRIMAVERA
+
+    lst->setVestimenta(14, 328, "Camisa", "rosado", "M, L, XL", 'M');
+    lst->setVestimenta(13, 280, "Polera", "gris", "M, L, XL", 'M');
+    lst->setVestimenta(12, 100, "Bermuda", "rojo", "M, L, XL", 'M');
+
+    // FEMENINO
+
+    // VERANO
+    lst->setVestimenta(11, 120, "Top", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(10, 420, "Vestido", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(9, 320, "Camiseta", "rojo", "XS, S, M", 'F');
+    // INVIERNO
+
+    lst->setVestimenta(8, 223, "Abrigo", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(7, 380, "Jerseys", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(6, 101, "Bufanda", "rojo", "XS, S, M", 'F');
+    // OTONIO
+
+    lst->setVestimenta(5, 281, "Sueter", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(4, 179, "Chaqueta", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(3, 210, "Pantalones", "rojo", "XS, S, M", 'F');
+    // PRIMAVERA
+
+    lst->setVestimenta(2, 299, "Vestido", "rosado", "XS, S, M", 'F');
+    lst->setVestimenta(1, 100, "Falda", "gris", "XS, S, M", 'F');
+    lst->setVestimenta(0, 119, "Short", "azul", "XS, S, M", 'F');
+}
+
+int confirmarProducto(Pila pila, Cola cola, int tamanio, CatalogoVestimenta<int>* lst) {
+    marco("     RESUMEN DE COMPRA     ", " 1)Productos  2)Precios: ", TRUE, 2);
+    int importe = 0;
+    cout << TRUE << "1) " << BLANK;
+    for (int i = 0; i < tamanio; i++)
+    {
+        cout << lst->getNombre(pila.top()) << ", ";
+        pila.pop();
+    }
+    cout << endl;
+    cout << TRUE << "2) " << BLANK;
+    for (int i = 0; i < tamanio; i++)
+    {
+        cout << lst->getPrecio(cola.front()) << ", ";
+        importe += lst->getPrecio(cola.front());
+        cola.dequeue();
+    }
+    cout << endl << TRUE << "Importe total: " << importe << BLANK << endl << endl;
+    return importe;
+}
+
+// MAIN
 
 int main() {
 
     // SE CREAN LOS PRODUCTOS
     productos(lst);
-    Bienvenido();
+    bienvenido();
 
     int dato;
     int tamanio = 0;
     int codigo[100];
     int saldazo;
 
-    Marco("    REGISTRO DE USUARIO    ", " (1) Correo (2) Usuarios ", PURPLE, 2);
+    marco("    REGISTRO DE USUARIO    ", " (1) Correo (2) Usuarios ", PURPLE, 2);
     cout << BLACK; cin >> dato; cout << BLANK;
 
     GestorUsuarios usuario;
 
     switch (dato) {
     case 1: {
-        Marco("        ENVIO CORREO       ", " ", BLUE, 1);
+        marco("        ENVIO CORREO       ", " ", BLUE, 1);
         usuario.EnviarCorreo();
         break;
     } 
     case 2: {
 
-        Marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
+        marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
         int dato; cout << BLACK; cin >> dato; cout << BLANK;
 
-        Marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
+        marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
         int datoUsuario; cout << BLACK; cin >> datoUsuario; cout << BLANK;
 
         switch (datoUsuario) {
@@ -247,8 +275,8 @@ int main() {
             cin.get();
             while (1 > 0)
             {
-                Marco("      CARRITO DE COMPRAS   ", " escoja una operacion... ", DARK_GREEN, 2);
-                Marco("   1)Agregar    2)Comprar  ", " 3)Eliminar  4)Historial ", TRUE, 2);
+                marco("      CARRITO DE COMPRAS   ", " escoja una operacion... ", DARK_GREEN, 2);
+                marco("   1)Agregar    2)Comprar  ", " 3)Eliminar  4)Historial ", DARK_GREEN, 2);
 
                 int carro; cout << BLACK; cin >> carro; cout << BLANK;
 
@@ -256,8 +284,8 @@ int main() {
 
                 switch (carro) {
                 case 1: {
-                    Marco("    CARRITO DE COMPRAS     ", " escoja una operacion... ", AQUA, 2);
-                    Marco("      MOSTRAR CATALOGO     ", "   1) Hombre   2) Mujer  ", AQUA, 2);
+                    marco("    CARRITO DE COMPRAS     ", " escoja una operacion... ", AQUA, 2);
+                    marco("      MOSTRAR CATALOGO     ", "   1) Hombre   2) Mujer  ", AQUA, 2);
                     int opcion; cout << BLACK; cin >> opcion; cout << BLANK;
                     if (opcion == 1)
                     {
@@ -268,21 +296,22 @@ int main() {
                         catalogoMujeres();
                     }
                     cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
-                    cin >> codigo[tamanio];
+                    int codigoPrenda;
+                    cin >> codigoPrenda;
+                    codigo[tamanio] = codigoPrenda;
+                    pila.push(codigoPrenda);
+                    cola.enqueue(codigoPrenda);
                     tamanio++;
 
-                    Ordenamientomenor_mayor(codigo, tamanio);
+                    ordenamientoMenorMayor(codigo, tamanio);
 
                     break;
                 }
                 case 2: {
-                    int gasto = 0;
-                    cout << "Ingrese Los Datos a comprar: \n";
-                    for (int i = 0; i < tamanio; i++)
-                    {
-                        gasto = +lst->getPrecio(codigo[i]);
-                    }
-                    carritoCompra.Comprar(gasto, saldazo, usuario.cliente.codigo_del_usuario());
+                    float importeTotal;
+                    importeTotal = confirmarProducto(pila, cola, tamanio, lst);
+                    
+                    carritoCompra.Comprar(importeTotal, saldazo, usuario.cliente.codigo_del_usuario());
                     return 0;
                     break;
                 }
@@ -298,18 +327,18 @@ int main() {
                     carritoCompra.Historial();
                     for (int i = 0; i < tamanio; i++)
                     {
-                        MostrarVestimenta(lst, codigo[i]);
+                        mostrarVestimenta(lst, codigo[i]);
                     }
                     break;
                 }
                 default:
-                    cerr << "Tipo de datos no válido\n";
+                    cerr << "Tipo de datos no valido\n";
                 }
             }
             break;
         }
         default:
-            cerr << "Tipo de datos no válido\n";
+            cerr << "Tipo de datos no valido\n";
         }
         system("pause>0");
     }
