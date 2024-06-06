@@ -97,6 +97,7 @@ void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, string 
     cout << BLANK << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + ubicacion + " " + contacto + "\n";
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl << endl;
+    
 }
 
 void GestorUsuarios::usuarioVendedor(Usuario usua, float ventas, string empresa)

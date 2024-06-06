@@ -234,114 +234,119 @@ int confirmarProducto(Pila pila, Cola cola, int tamanio, CatalogoVestimenta<int>
 }
 
 // MAIN
-
 int main() {
-
     // SE CREAN LOS PRODUCTOS
     productos(lst);
-    bienvenido();
-
+ 
     int dato;
     int tamanio = 0;
     int codigo[100];
     int saldazo;
-
-    marco("    REGISTRO DE USUARIO    ", " (1) Correo (2) Usuarios ", PURPLE, 2);
-    cout << BLACK; cin >> dato; cout << BLANK;
-
     GestorUsuarios usuario;
 
-    switch (dato) {
-    case 1: {
-        marco("        ENVIO CORREO       ", " ", BLUE, 1);
-        usuario.EnviarCorreo();
-        break;
-    } 
-    case 2: {
+    while (1) {
+        system("cls");
+        bienvenido();
+        marco("    REGISTRO DE USUARIO    ", " (1) Correo (2) Usuarios ", PURPLE, 2);
+        cout << BLACK; cin >> dato; cout << BLANK;
 
-        marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
-        int dato; cout << BLACK; cin >> dato; cout << BLANK;
-
-        marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
-        int datoUsuario; cout << BLACK; cin >> datoUsuario; cout << BLANK;
-
-        switch (datoUsuario) {
-        case 1: {
-            usuario.CrearUsuariosDistribuidor(dato, 1);
+        switch (dato) {
+            case 1: {
+            marco("        ENVIO CORREO       ", " ", BLUE, 1);
+            usuario.EnviarCorreo();
+            cin.get(); cin.get();
             break;
         }
-        case 2: {
-            saldazo = usuario.CrearUsuariosCliente(dato, 1);
-            cin.get();
-            while (1 > 0)
-            {
-                marco("      CARRITO DE COMPRAS   ", " escoja una operacion... ", DARK_GREEN, 2);
-                marco("   1)Agregar    2)Comprar  ", " 3)Eliminar  4)Historial ", DARK_GREEN, 2);
+            case 2: {
+            marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
+            int dato; cout << BLACK; cin >> dato; cout << BLANK;
 
-                int carro; cout << BLACK; cin >> carro; cout << BLANK;
+            marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
+            int datoUsuario; cout << BLACK; cin >> datoUsuario; cout << BLANK;
 
-                CarritoCompras carritoCompra;
-
-                switch (carro) {
-                case 1: {
-                    marco("    CARRITO DE COMPRAS     ", " escoja una operacion... ", AQUA, 2);
-                    marco("      MOSTRAR CATALOGO     ", "   1) Hombre   2) Mujer  ", AQUA, 2);
-                    int opcion; cout << BLACK; cin >> opcion; cout << BLANK;
-                    if (opcion == 1)
-                    {
-                        catalogoHombres();
-                    }
-                    else if (opcion == 2)
-                    {
-                        catalogoMujeres();
-                    }
-                    cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
-                    int codigoPrenda;
-                    cin >> codigoPrenda;
-                    codigo[tamanio] = codigoPrenda;
-                    pila.push(codigoPrenda);
-                    cola.enqueue(codigoPrenda);
-                    tamanio++;
-
-                    ordenamientoMenorMayor(codigo, tamanio);
-
-                    break;
-                }
-                case 2: {
-                    float importeTotal;
-                    importeTotal = confirmarProducto(pila, cola, tamanio, lst);
-                    
-                    carritoCompra.Comprar(importeTotal, saldazo, usuario.cliente.codigo_del_usuario());
-                    return 0;
-                    break;
-                }
-                case 3: {
-                    int codigoPrenda;
-                    cout << "Ingrese el codigo de la prenda a eliminar: \n"; cin >> codigoPrenda;
-                    carritoCompra.Eliminar(tamanio, codigoPrenda, codigo);
-                    tamanio--;
-                    break;
-                }
-                case 4: {
-                    cout << "Los Datos del Historial son: \n";
-                    carritoCompra.Historial();
-                    for (int i = 0; i < tamanio; i++)
-                    {
-                        mostrarVestimenta(lst, codigo[i]);
-                    }
-                    break;
-                }
-                default:
-                    cerr << "Tipo de datos no valido\n";
-                }
+            switch (datoUsuario) {
+            case 1: {
+                usuario.CrearUsuariosDistribuidor(dato, 1);
+                break;
             }
-            break;
+            case 2: {
+                saldazo = usuario.CrearUsuariosCliente(dato, 1);
+                cin.get(); cin.get();
+                while (1 > 0)
+                {
+                    system("cls");
+                    bienvenido();
+                    marco("      CARRITO DE COMPRAS   ", " escoja una operacion... ", DARK_GREEN, 2);
+                    marco("   1)Agregar    2)Comprar  ", " 3)Eliminar  4)Historial ", DARK_GREEN, 2);
+
+                    int carro; cout << BLACK; cin >> carro; cout << BLANK;
+
+                    CarritoCompras carritoCompra;
+
+                    switch (carro) {
+                    case 1: {
+                        marco("    CARRITO DE COMPRAS     ", " escoja una operacion... ", AQUA, 2);
+                        marco("      MOSTRAR CATALOGO     ", "   1) Hombre   2) Mujer  ", AQUA, 2);
+                        int opcion; cout << BLACK; cin >> opcion; cout << BLANK;
+                        if (opcion == 1)
+                        {
+                            catalogoHombres();
+                        }
+                        else if (opcion == 2)
+                        {
+                            catalogoMujeres();
+                        }
+
+                        cout << "Ingrese el codigo de prenda a agregar al carrito: \n";
+                        int codigoPrenda;
+                        cin >> codigoPrenda;
+                        codigo[tamanio] = codigoPrenda;
+                        pila.push(codigoPrenda);
+                        cola.enqueue(codigoPrenda);
+                        tamanio++;
+
+                        ordenamientoMenorMayor(codigo, tamanio);
+                        cin.get();
+                        break;
+                    }
+                    case 2: {
+                        float importeTotal;
+                        importeTotal = confirmarProducto(pila, cola, tamanio, lst);
+
+                        carritoCompra.Comprar(importeTotal, saldazo, usuario.cliente.codigo_del_usuario());
+                        return 0;
+                        cin.get();
+                        break;
+                    }
+                    case 3: {
+                        int codigoPrenda;
+                        cout << "Ingrese el codigo de la prenda a eliminar: \n"; cin >> codigoPrenda;
+                        carritoCompra.Eliminar(tamanio, codigoPrenda, codigo);
+                        tamanio--;
+                        cin.get();
+                        break;
+                    }
+                    case 4: {
+                        cout << "Los Datos del Historial son: \n";
+                        carritoCompra.Historial();
+                        for (int i = 0; i < tamanio; i++)
+                        {
+                            mostrarVestimenta(lst, codigo[i]);
+                        }
+                        cin.get(); cin.get();
+                        break;
+                    }
+                    default: cerr << "Tipo de datos no valido\n";
+                    }
+                }
+                break;
+            }
+            default: cerr << "Tipo de datos no valido\n";
+            }
+
+            system("pause>0");
         }
-        default:
-            cerr << "Tipo de datos no valido\n";
         }
-        system("pause>0");
     }
-    }
-}
+ }
 
