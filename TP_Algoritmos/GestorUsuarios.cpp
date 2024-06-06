@@ -10,7 +10,7 @@
 Usuario GestorUsuarios::CrearUsuarios(int posUsuario)
 {
     Usuario usuario;
-    cout << SKYBLUE << "<-" << BLANK << " INGRESE DATOS PARA EL USUARIO " + to_string(posUsuario) << SKYBLUE << ": " << "->" << endl;
+    cout << SKYBLUE << "<-" << BLANK << " INGRESE DATOS PARA EL USUARIO " << posUsuario << SKYBLUE << ": " << "->" << endl;
 
     cout << SKYBLUE << "*" << BLANK << " INGRESE UN CODIGO DE USUARIO: ";
     cin >> usuario.codUsuario;
@@ -29,7 +29,7 @@ Usuario GestorUsuarios::CrearUsuarios(int posUsuario)
     return usuario;
 }
 
-void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
+int GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
 {
     Usuario usua = CrearUsuarios(inicial);
 
@@ -37,15 +37,16 @@ void GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
     cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE DATOS DE UBICACION: ";
     cin >> ubicacion;
 
-    string contacto;
-    cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE DATOS DEL CONTACTO: ";
-    cin >> contacto;
-    usuarioDistribuidor(usua, ubicacion, contacto);
+    cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE NUMERO DE CONTACTO: ";
+    cin >> usua.contacto;
 
+    usuarioDistribuidor(usua, ubicacion, usua.contacto);
+    return usua.contacto;
     cantidad--;
     inicial++;
     if (cantidad > 0) {
         CrearUsuariosDistribuidor(cantidad, inicial);
+        
     }
 }
 
@@ -90,14 +91,13 @@ int GestorUsuarios::CrearUsuariosCliente(int cantidad, int inicial)
     return saldo;
 }
 
-void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, string contacto)
+void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, int contacto)
 {
     cout << endl;
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl;
     cout << BLANK << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
-        + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + ubicacion + " " + contacto + "\n";
+        + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + ubicacion + " " + to_string(contacto) + "\n";
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl << endl;
-    
 }
 
 void GestorUsuarios::usuarioVendedor(Usuario usua, float ventas, string empresa)
@@ -141,3 +141,9 @@ string GestorUsuarios::Correo(string nombre)
 {
     return "El correo fue enviado a: " + nombre;
 }
+
+int GestorUsuarios::getContacto(int contacto2)
+{
+    return contacto2;
+}
+

@@ -69,6 +69,12 @@
     <ClInclude Include="cola.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HashTabla.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HashEntidad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pedido.cpp">
@@ -123,6 +129,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cola.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTabla.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HashEntidad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

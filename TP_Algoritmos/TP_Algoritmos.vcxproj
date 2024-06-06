@@ -136,6 +136,8 @@
     <ClInclude Include="Envio.h" />
     <ClInclude Include="Favoritos.h" />
     <ClInclude Include="GestorUsuarios.h" />
+    <ClInclude Include="HashEntidad.h" />
+    <ClInclude Include="HashTabla.h" />
     <ClInclude Include="HIstorialCompras.h" />
     <ClInclude Include="Marca.h" />
     <ClInclude Include="Oferta.h" />
@@ -156,6 +158,8 @@
     <ClCompile Include="Envio.cpp" />
     <ClCompile Include="Favoritos.cpp" />
     <ClCompile Include="GestorUsuarios.cpp" />
+    <ClCompile Include="HashEntidad.cpp" />
+    <ClCompile Include="HashTabla.cpp" />
     <ClCompile Include="HIstorialCompras.cpp" />
     <ClCompile Include="Marca.cpp" />
     <ClCompile Include="Oferta.cpp" />

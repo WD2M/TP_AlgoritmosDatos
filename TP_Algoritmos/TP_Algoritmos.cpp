@@ -9,6 +9,8 @@
 #include "GestorUsuarios.h"
 #include "pila.h"
 #include "cola.h"
+#include "HashEntidad.h"
+#include "HashTabla.h"
 
 // ENCABEZADO
 #include <iostream>
@@ -33,6 +35,14 @@ using namespace std;
 #define SKYBLUE "\033[36m"
 #define BRIGHT_SKYBLUE "\033[1;36m"
 #define PINK "\033[38;2;255;105;180m"
+
+// HASH TABLE
+void imprimirTablaHash(HashTabla* ht, int* value) {
+    cout << AQUA << "N° Distribuidor  " << BLANK << "Numero de Contacto" << endl;
+    for (int i = 0; i < ht->size(); ++i) {
+        cout << "       " << AQUA << ht->buscar(value[i]) << BLUE << "        :       " << BLANK << value[i] << endl;
+    }
+}
 
 // LISTAS - PILAS AGREAGADAS
 Vestimenta* vestimenta = new Vestimenta;
@@ -242,6 +252,7 @@ int main() {
     int tamanio = 0;
     int codigo[100];
     int saldazo;
+    int value[100];
     GestorUsuarios usuario;
 
     while (1) {
@@ -260,13 +271,24 @@ int main() {
             case 2: {
             marco("  CUANTOS DESEA REGISTRAR  ", " ", PURPLE, 1);
             int dato; cout << BLACK; cin >> dato; cout << BLANK;
+            HashTabla* ht = new HashTabla(dato);
 
             marco("       CREAR USUARIO       ", "1)Distribuidor  2)Cliente", SKYBLUE, 2);
             int datoUsuario; cout << BLACK; cin >> datoUsuario; cout << BLANK;
 
             switch (datoUsuario) {
             case 1: {
-                usuario.CrearUsuariosDistribuidor(dato, 1);
+                for (int i = 0; i < dato; i++)
+                {
+                    int codigazo;
+                    codigazo = usuario.CrearUsuariosDistribuidor(dato, 1);
+                    value[i] = codigazo;
+                }
+                for (int i = 0; i < dato; i++)
+                {
+                    ht->insertar(value[i], i+1);
+                }
+                imprimirTablaHash(ht, value);
                 break;
             }
             case 2: {

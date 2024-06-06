@@ -11,13 +11,14 @@ public:
 	Distribuidor distribuidor;
 
 	Usuario CrearUsuarios(int posUsuario);
-	void CrearUsuariosDistribuidor(int cantidad, int inicial);
+	int CrearUsuariosDistribuidor(int cantidad, int inicial);
 	void CrearUsuariosVendedor(int cantidad, int inicial);
 	int CrearUsuariosCliente(int cantidad, int inicial);
-	void usuarioDistribuidor(Usuario usua, string ubicacion, string contacto);
+	void usuarioDistribuidor(Usuario usua, string ubicacion, int contacto);
 	void usuarioVendedor(Usuario usua, float ventas, string empresa);
 	void usuarioCliente(Usuario usua, float saldo, string tarjeta);
 	string RegistroContenido(string nombre);
 	void EnviarCorreo();
 	string Correo(string nombre);
+	int getContacto(int contacto2);
 };
