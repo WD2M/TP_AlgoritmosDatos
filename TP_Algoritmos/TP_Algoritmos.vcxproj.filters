@@ -75,6 +75,9 @@
     <ClInclude Include="HashEntidad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="arbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pedido.cpp">
@@ -135,6 +138,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="HashEntidad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="arbol.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

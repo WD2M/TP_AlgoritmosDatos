@@ -1,16 +1,17 @@
 ﻿// CLASES AGREGADAS
 #include "CarritoCompras.h"
 #include "Favoritos.h"
-#include "CatalogoVestimenta.cpp"
+#include "CatalogoVestimenta.cpp" // lista
 #include "HIstorialCompras.h"
 #include "Temporada.cpp"
 #include "Oferta.cpp"
 #include "Marca.cpp"
 #include "GestorUsuarios.h"
-#include "pila.h"
-#include "cola.h"
-#include "HashEntidad.h"
-#include "HashTabla.h"
+#include "pila.h" // pila
+#include "cola.h" // cola
+#include "HashEntidad.h" // hashtable
+#include "HashTabla.h" // hashtable
+#include "arbol.h" // arbol
 
 // ENCABEZADO
 #include <iostream>
@@ -49,6 +50,13 @@ Vestimenta* vestimenta = new Vestimenta;
 CatalogoVestimenta<int>* lst = new CatalogoVestimenta<int>();
 Pila pila;
 Cola cola;
+
+// ARBOL
+void imprimir(int e) {
+    cout << BLUE << " -> " << BLANK << e;
+}
+
+arbol<int>* Arbol = new arbol<int>(imprimir);
 
 // APARTADO GRAFICO
 void bienvenido() {
@@ -264,7 +272,15 @@ int main() {
         switch (dato) {
             case 1: {
             marco("        ENVIO CORREO       ", " ", BLUE, 1);
-            usuario.EnviarCorreo();
+            for (int i = 0; i < 3; i++)
+            {
+                Arbol->insertar(usuario.EnviarCorreo());
+                cout << endl << endl;
+            }
+            cout << BLUE << "N° CORREOS ENVIADOS: " << BLANK << Arbol->altura() << endl;
+            cout << BLUE << "ID DE LOS CORREOS ENVIADOS EN ORDEN:" << BLANK;
+            Arbol->enOrden();
+            
             cin.get(); cin.get();
             break;
         }

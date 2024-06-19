@@ -18,7 +18,7 @@ public:
 	void usuarioVendedor(Usuario usua, float ventas, string empresa);
 	void usuarioCliente(Usuario usua, float saldo, string tarjeta);
 	string RegistroContenido(string nombre);
-	void EnviarCorreo();
+	int EnviarCorreo();
 	string Correo(string nombre);
 	int getContacto(int contacto2);
 };

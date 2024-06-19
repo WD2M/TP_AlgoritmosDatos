@@ -123,11 +123,14 @@ string GestorUsuarios::RegistroContenido(string nombre)
     return " con contenido: " + nombre;
 }
 
-void GestorUsuarios::EnviarCorreo()
+int GestorUsuarios::EnviarCorreo()
 {
     auto EnvioCorreo = [&](string correo, string contenido) {
         return Correo(correo) + RegistroContenido(contenido);
         };
+    int codigoCorreo;
+    cout << BLUE << "- " << BLANK << "Ingrese un codigo de correo" << BLUE ": " << BLANK;
+    cin >> codigoCorreo;
     string correo;
     cout << BLUE << "- " << BLANK << "Ingrese un correo" << BLUE ": " << BLANK;
     cin >> correo;
@@ -135,6 +138,7 @@ void GestorUsuarios::EnviarCorreo()
     cout << BLUE << "- " << BLANK << "Ingrese el contenido" << BLUE ": " << BLANK;
     cin >> contenido;
     cout << EnvioCorreo(correo, contenido);
+    return codigoCorreo;
 }
 
 string GestorUsuarios::Correo(string nombre)
