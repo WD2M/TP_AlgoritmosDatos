@@ -2,10 +2,13 @@
 #include "Cliente.h"
 #include "Vendedor.h"
 #include "Distribuidor.h"
+#include "Grafo.hpp" //grafo
+
 
 class GestorUsuarios
 {
 public:
+	CGrafo<int>* G = new CGrafo<int>();
 	Cliente cliente;
 	Vendedor vendedor;
 	Distribuidor distribuidor;

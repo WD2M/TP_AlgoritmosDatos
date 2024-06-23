@@ -2,6 +2,7 @@
 #include "CarritoCompras.h"
 #include <iostream>
 
+
 #define BLUE "\033[34m"
 #define BLANK "\033[38;2;248;243;212m"
 #define SKYBLUE "\033[36m"
@@ -39,7 +40,7 @@ int GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
 
     cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE NUMERO DE CONTACTO: ";
     cin >> usua.contacto;
-
+    G->adicionarVertice(usua.codUsuario); //indice=0
     usuarioDistribuidor(usua, ubicacion, usua.contacto);
     return usua.contacto;
     cantidad--;
@@ -95,7 +96,7 @@ void GestorUsuarios::usuarioDistribuidor(Usuario usua, string ubicacion, int con
 {
     cout << endl;
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl;
-    cout << BLANK << "Usuario Distribuidor registrado con datos: \n" + to_string(usua.codUsuario) + " " + usua.nombre + " "
+    cout << BLANK << "Usuario Distribuidor registrado con datos: \n" + to_string(G->obtenerVertice(0)) + " " + usua.nombre + " "
         + usua.apellido + " " + usua.Ubicacion_usuario + " " + usua.correo + " " + ubicacion + " " + to_string(contacto) + "\n";
     cout << BRIGHT_SKYBLUE << "**************************************************" << endl << endl;
 }
