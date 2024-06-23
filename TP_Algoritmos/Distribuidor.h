@@ -1,6 +1,6 @@
 #pragma once
 #include "Usuario.h"
-#include "Marca.h"
+
 class Distribuidor : public Usuario
 {
 public:

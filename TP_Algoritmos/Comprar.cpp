@@ -57,9 +57,6 @@ void  Compras::MostrarCompra(float precio, int codigo)
 	cin >> TipoMoneda;
 	cout << UnionEventos(precio, TipoMoneda, MetodoPago) << endl;
 	Realizar_Envio_Compra.IndicarEnviar(codigousuario.ubiciacion_del_usuario(), codigo, "");
-
-
-
 }
 
 void Compras::Aumentarprenda()

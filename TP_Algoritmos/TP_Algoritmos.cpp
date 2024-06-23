@@ -1,11 +1,7 @@
 ﻿// CLASES AGREGADAS
 #include "CarritoCompras.h"
-#include "Favoritos.h"
 #include "CatalogoVestimenta.cpp" // lista
 #include "HIstorialCompras.h"
-#include "Temporada.cpp"
-#include "Oferta.cpp"
-#include "Marca.cpp"
 #include "GestorUsuarios.h"
 #include "pila.h" // pila
 #include "cola.h" // cola

@@ -135,18 +135,13 @@
     <ClInclude Include="Comprar.h" />
     <ClInclude Include="Distribuidor.h" />
     <ClInclude Include="Envio.h" />
-    <ClInclude Include="Favoritos.h" />
     <ClInclude Include="GestorUsuarios.h" />
     <ClInclude Include="HashEntidad.h" />
     <ClInclude Include="HashTabla.h" />
     <ClInclude Include="HIstorialCompras.h" />
-    <ClInclude Include="Marca.h" />
-    <ClInclude Include="Oferta.h" />
     <ClInclude Include="Pedido.h" />
     <ClInclude Include="pila.h" />
-    <ClInclude Include="Temporada.h" />
     <ClInclude Include="Usuario.h" />
-    <ClInclude Include="Vendedor.h" />
     <ClInclude Include="Vestimenta.h" />
   </ItemGroup>
   <ItemGroup>
@@ -158,18 +153,13 @@
     <ClCompile Include="Comprar.cpp" />
     <ClCompile Include="Distribuidor.cpp" />
     <ClCompile Include="Envio.cpp" />
-    <ClCompile Include="Favoritos.cpp" />
     <ClCompile Include="GestorUsuarios.cpp" />
     <ClCompile Include="HashEntidad.cpp" />
     <ClCompile Include="HashTabla.cpp" />
     <ClCompile Include="HIstorialCompras.cpp" />
-    <ClCompile Include="Marca.cpp" />
-    <ClCompile Include="Oferta.cpp" />
     <ClCompile Include="pila.cpp" />
-    <ClCompile Include="Temporada.cpp" />
     <ClCompile Include="TP_Algoritmos.cpp" />
     <ClCompile Include="Pedido.cpp" />
-    <ClCompile Include="Vendedor.cpp" />
     <ClCompile Include="Vestimenta.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

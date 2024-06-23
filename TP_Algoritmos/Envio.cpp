@@ -15,7 +15,7 @@ void Envio::Enviar(string Ubicacion, char EstadoEnvio, int Codigo, string FechaE
 	this->EstadoEnvio = EstadoEnvio;
 	this->Codigo = Codigo;
 
-	cout << "Ingrese el mes que desee el envio: ";
+	cout << "Ingrese el mes que desee el envio (1-12): ";
 	cin >> mes;
 	cout << "los siguientes dias posibles para el envio son los siguientes:";
 	cout << endl<< AQUA << "Opcion 1:" << endl;
