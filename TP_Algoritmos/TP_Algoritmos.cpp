@@ -18,6 +18,9 @@
 #include <string>
 #include <sstream>
 #include <cmath>
+#include <iomanip>
+#include <ctime>
+#include <sstream>
 using namespace std;
 
 // COLORES
@@ -39,9 +42,10 @@ using namespace std;
 
 // HASH TABLE
 void imprimirTablaHash(HashTabla* ht, int* value) {
-    cout << AQUA << "N° Distribuidor  " << BLANK << "Numero de Contacto" << endl;
+    cout << AQUA << "Hora de envio (HH:MM:SS)" << BLANK << " Codigo de correo" << endl;
+
     for (int i = 0; i < ht->size(); ++i) {
-        cout << "       " << AQUA << ht->buscar(value[i]) << BLUE << "        :       " << BLANK << value[i] << endl;
+        cout << "       " << AQUA << (ht->buscar(value[i])) / 10000 << ":" << ((ht->buscar(value[i]) % 10000) - (ht->buscar(value[i])) % 100) / 100 << ":" << ((ht->buscar(value[i])) % 100) + i << BLUE << "         :       " << BLANK << value[i] << endl;
     }
 }
 
@@ -261,7 +265,9 @@ int main() {
     int codigo[100];
     int saldazo;
     int value[100];
+    int value2[100];
     GestorUsuarios usuario;
+
 
     while (1) {
         system("cls");
@@ -271,16 +277,30 @@ int main() {
 
         switch (dato) {
             case 1: {
-            marco("        ENVIO CORREO       ", " ", BLUE, 1);
-            for (int i = 0; i < 3; i++)
+            marco("        ENVIO CORREO       ", "Nro de correos a enviar: ", BLUE, 2);
+            int cantCorreo; cout << BLACK; cin >> cantCorreo; cout << endl;
+            HashTabla* ht2 = new HashTabla(cantCorreo);
+            for (int i = 0; i < cantCorreo; i++)
             {
-                Arbol->insertar(usuario.EnviarCorreo());
-                cout << endl << endl;
+
+                int codCorreo = usuario.EnviarCorreo();
+                value2[i] = codCorreo;
+                
             }
-            cout << BLUE << "N° CORREOS ENVIADOS: " << BLANK << Arbol->altura() << endl;
-            cout << BLUE << "ID DE LOS CORREOS ENVIADOS EN ORDEN:" << BLANK;
-            Arbol->enOrden();
-            
+        
+            for (int i = 0; i < cantCorreo; i++)
+            { 
+                time_t t = time(nullptr);
+                tm now;
+                localtime_s(&now, &t);
+                int hour = now.tm_hour;
+                int minute = now.tm_min;
+                int second = now.tm_sec;
+                int currentHour = hour * 10000 + minute * 100 + second;
+                ht2->insertar(value2[i], currentHour);
+            }
+            cout << endl;
+            imprimirTablaHash(ht2, value2);
             cin.get(); cin.get();
             break;
         }
@@ -298,13 +318,11 @@ int main() {
                 {
                     int codigazo;
                     codigazo = usuario.CrearUsuariosDistribuidor(dato, 1);
-                    value[i] = codigazo;
+                    Arbol->insertar(codigazo);
                 }
-                for (int i = 0; i < dato; i++)
-                {
-                    ht->insertar(value[i], i+1);
-                }
-                imprimirTablaHash(ht, value);
+                cout << BLUE << "Cantidad de distribuidores agregados: " << BLANK << Arbol->altura() << endl;
+                cout << BLUE << "Cod Usuarios ordenados en arbol: " << BLANK << endl;
+                Arbol->enOrden();
                 break;
             }
             case 2: {

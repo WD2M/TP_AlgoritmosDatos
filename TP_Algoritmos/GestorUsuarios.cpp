@@ -44,7 +44,7 @@ int GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
     int ranArco= 18 + rand() % 38 - 18 + 1;
     G->adicionarArco(0, ranArco); //indice=0
     usuarioDistribuidor(usua, ubicacion, usua.contacto);
-    return usua.contacto;
+    return usua.codUsuario;
     cantidad--;
     inicial++;
     if (cantidad > 0) {
@@ -140,7 +140,8 @@ int GestorUsuarios::EnviarCorreo()
     string contenido;
     cout << BLUE << "- " << BLANK << "Ingrese el contenido" << BLUE ": " << BLANK;
     cin >> contenido;
-    cout << EnvioCorreo(correo, contenido);
+    cout << EnvioCorreo(correo, contenido) << endl << endl;
+
     return codigoCorreo;
 }
 
