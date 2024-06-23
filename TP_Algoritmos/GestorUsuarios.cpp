@@ -41,6 +41,8 @@ int GestorUsuarios::CrearUsuariosDistribuidor(int cantidad, int inicial)
     cout << BRIGHT_SKYBLUE << "*" << BLANK << " INGRESE NUMERO DE CONTACTO: ";
     cin >> usua.contacto;
     G->adicionarVertice(usua.codUsuario); //indice=0
+    int ranArco= 18 + rand() % 38 - 18 + 1;
+    G->adicionarArco(0, ranArco); //indice=0
     usuarioDistribuidor(usua, ubicacion, usua.contacto);
     return usua.contacto;
     cantidad--;
