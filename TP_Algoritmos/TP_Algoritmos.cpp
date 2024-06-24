@@ -152,22 +152,65 @@ void catalogoHombres()
 }
 
 // FUNCIONES EXTRAS
-void ordenamientoMenorMayor(int codigo[], int tamanio)
-{
-    for (int i = 0; i < tamanio; i++)
-    {
-        for (int j = i; j < tamanio; j++)
-        {
-            if (codigo[i] >= codigo[j])
-            {
-                int old = codigo[i];
-                codigo[i] = codigo[j];
-                codigo[j] = old;
-            }
+void Merge(int* A1, int* A2, int* A, int n) {
+    int i = 0, j = 0, k = 0;
+
+    int mitad = n / 2;
+
+    while (i < mitad && j < n - mitad) {
+        if (A1[i] < A2[j]) {
+            A[k] = A1[i];
+            i++, k++;
         }
 
+        else {
+            A[k] = A2[j];
+            j++, k++;
+        }
     }
 
+    while (i < mitad) {
+        A[k] = A1[i];
+        i++, k++;
+    }
+
+    while (j < n - mitad) {
+        A[k] = A2[j];
+        j++, k++;
+    }
+}
+
+void mergeSort(int* A, int n) {
+    if (n > 1) {
+        int mitad = n / 2;
+        int* A1 = new int[mitad];
+        int* A2 = new int[n - mitad];
+
+
+        cout << "\nNUMEROS DE LA PRIMERA MITAD: " << mitad << endl;
+
+        for (int i = 0; i < mitad; i++) {
+            A1[i] = A[i];
+            cout << A[i] << " - ";
+        }
+
+        cout << endl;
+
+        cout << "\nNUMEROS DE LA SEGUNDA MITAD: " << mitad << endl;
+
+        for (int i = mitad; i < n; i++) {
+            A2[i - mitad] = A[i];
+            cout << A2[i - mitad] << " - ";
+        }
+
+        cout << endl;
+
+
+        mergeSort(A1, mitad);
+
+        mergeSort(A2, n - mitad);
+        Merge(A1, A2, A, n);
+    }
 }
 
 void mostrarVestimenta(CatalogoVestimenta<int>* lst, int i) {
@@ -358,7 +401,7 @@ int main() {
                         cola.enqueue(codigoPrenda);
                         tamanio++;
 
-                        ordenamientoMenorMayor(codigo, tamanio);
+                        mergeSort(codigo, tamanio);
                         cin.get();
                         break;
                     }
