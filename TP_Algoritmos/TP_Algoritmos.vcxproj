@@ -139,7 +139,6 @@
     <ClInclude Include="HashEntidad.h" />
     <ClInclude Include="HashTabla.h" />
     <ClInclude Include="HIstorialCompras.h" />
-    <ClInclude Include="Pedido.h" />
     <ClInclude Include="pila.h" />
     <ClInclude Include="Usuario.h" />
     <ClInclude Include="Vestimenta.h" />
@@ -159,7 +158,6 @@
     <ClCompile Include="HIstorialCompras.cpp" />
     <ClCompile Include="pila.cpp" />
     <ClCompile Include="TP_Algoritmos.cpp" />
-    <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="Vestimenta.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

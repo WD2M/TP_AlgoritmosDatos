@@ -1,5 +1,4 @@
 #pragma once
-#include "Pedido.h"
 #include "Usuario.h"
 #include "Comprar.h"
 #include <string>
